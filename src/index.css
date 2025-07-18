@@ -2,39 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system for ALDA2U. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 99%;
+    --foreground: 220 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep professional blue for trust and healthcare */
+    --primary: 212 45% 25%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 212 35% 35%;
+    
+    /* Secondary: Warm blue-grey for balance */
+    --secondary: 210 20% 92%;
+    --secondary-foreground: 220 15% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Muted tones for subtle elements */
+    --muted: 210 15% 95%;
+    --muted-foreground: 220 10% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent: Warm teal for human touch */
+    --accent: 185 40% 60%;
+    --accent-foreground: 0 0% 98%;
+    --accent-light: 185 35% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Support colors */
+    --warm: 25 70% 65%;
+    --warm-light: 25 60% 85%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 212 45% 25%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(212 45% 25%), hsl(212 35% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(185 40% 60%), hsl(185 35% 70%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 70% 65%), hsl(25 60% 85%));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(212 45% 25% / 0.1);
+    --shadow-medium: 0 8px 30px -8px hsl(212 45% 25% / 0.15);
+    --shadow-strong: 0 20px 40px -12px hsl(212 45% 25% / 0.25);
 
     --radius: 0.5rem;
 

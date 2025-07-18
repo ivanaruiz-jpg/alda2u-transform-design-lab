@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building2, Users, Cog, Target, Stethoscope, Lightbulb, Globe, Settings } from "lucide-react";
+import servicesImage from "@/assets/services-design.jpg";
 
 const Services = () => {
   const areas = [
@@ -90,15 +91,25 @@ const Services = () => {
         </div>
 
         {/* Methodology */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <div className="bg-accent/5 border border-accent/20 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold text-primary mb-4">
-              Metodología A2U
-            </h3>
-            <p className="text-lg text-foreground leading-relaxed">
-              Nuestra metodología propia basada en <span className="font-semibold text-accent">Human-Centered Design</span> aplicado 
-              específicamente al ámbito sociosanitario, adaptada a las particularidades y necesidades de este sector.
-            </p>
+        <div className="mb-16 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <img 
+                src={servicesImage} 
+                alt="Metodología de diseño centrado en las personas"
+                className="w-full h-64 lg:h-80 object-cover rounded-lg shadow-soft"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
+            </div>
+            <div className="bg-accent/5 border border-accent/20 rounded-lg p-8">
+              <h3 className="text-2xl font-semibold text-primary mb-4">
+                Metodología A2U
+              </h3>
+              <p className="text-lg text-foreground leading-relaxed">
+                Nuestra metodología propia basada en <span className="font-semibold text-accent">Human-Centered Design</span> aplicado 
+                específicamente al ámbito sociosanitario, adaptada a las particularidades y necesidades de este sector.
+              </p>
+            </div>
           </div>
         </div>
 

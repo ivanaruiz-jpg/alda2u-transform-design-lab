@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
+import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,7 +11,17 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={heroImage} 
+          alt="ALDA2U - Transformación en salud y servicios sociales" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
+      </div>
+      
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-64 h-64 bg-primary rounded-full mix-blend-multiply"></div>

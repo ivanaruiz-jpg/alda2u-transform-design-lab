@@ -1,6 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Stethoscope, Heart, Users, Phone, Building } from "lucide-react";
+import nereaCareImage from "@/assets/nerea-care.jpg";
+import care2uImage from "@/assets/care2u.jpg";
+import elkarBizituImage from "@/assets/elkar-bizitu.jpg";
+import heldukZabaltzenImage from "@/assets/helduak-zabaltzen.jpg";
+import teleasistenciaImage from "@/assets/teleasistencia.jpg";
 
 const Projects = () => {
   const projects = [
@@ -10,7 +15,8 @@ const Projects = () => {
       challenge: "Digitalización de procesos asistenciales",
       solution: "Plataforma integral para gestión de cuidados personalizados",
       impact: "Mejora del 40% en coordinación entre profesionales y mayor satisfacción del paciente",
-      tags: ["Digitalización", "Cuidados", "UX/UI"]
+      tags: ["Digitalización", "Cuidados", "UX/UI"],
+      image: nereaCareImage
     },
     {
       icon: Heart,
@@ -18,7 +24,8 @@ const Projects = () => {
       challenge: "Coordinación sociosanitaria fragmentada",
       solution: "Sistema de interoperabilidad entre servicios sociales y sanitarios",
       impact: "Reducción de tiempos de gestión y mejor continuidad asistencial",
-      tags: ["Interoperabilidad", "Coordinación", "Eficiencia"]
+      tags: ["Interoperabilidad", "Coordinación", "Eficiencia"],
+      image: care2uImage
     },
     {
       icon: Users,
@@ -26,7 +33,8 @@ const Projects = () => {
       challenge: "Inclusión social de personas en situación vulnerable",
       solution: "Metodología participativa para diseño de servicios inclusivos",
       impact: "Aumento del 60% en la participación activa de usuarios en servicios sociales",
-      tags: ["Inclusión", "Participación", "Servicios Sociales"]
+      tags: ["Inclusión", "Participación", "Servicios Sociales"],
+      image: elkarBizituImage
     },
     {
       icon: Building,
@@ -34,7 +42,8 @@ const Projects = () => {
       challenge: "Envejecimiento activo en entornos rurales",
       solution: "Red de apoyo comunitario con herramientas digitales adaptadas",
       impact: "Fortalecimiento de vínculos comunitarios y mejora de calidad de vida",
-      tags: ["Envejecimiento", "Comunidad", "Innovación Social"]
+      tags: ["Envejecimiento", "Comunidad", "Innovación Social"],
+      image: heldukZabaltzenImage
     },
     {
       icon: Phone,
@@ -42,7 +51,8 @@ const Projects = () => {
       challenge: "Modernización del servicio de teleasistencia regional",
       solution: "Rediseño integral del servicio con enfoque centrado en el usuario",
       impact: "Mayor cobertura territorial y mejora en tiempos de respuesta",
-      tags: ["Teleasistencia", "Gobierno", "Transformación Digital"]
+      tags: ["Teleasistencia", "Gobierno", "Transformación Digital"],
+      image: teleasistenciaImage
     }
   ];
 
@@ -66,20 +76,30 @@ const Projects = () => {
             <Card key={index} className="group hover:shadow-strong transition-all duration-500 hover:-translate-y-1 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
               
-              <CardHeader className="pb-4">
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors duration-300">
-                    <project.icon className="w-8 h-8 text-accent" />
+              {/* Project Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="w-12 h-12 bg-white/90 rounded-lg flex items-center justify-center">
+                    <project.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <div>
-                    <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {project.tags.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
+                </div>
+              </div>
+              
+              <CardHeader className="pb-4">
+                <div className="flex items-center justify-between mb-4">
+                  <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
                   </div>
                 </div>
               </CardHeader>

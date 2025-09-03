@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Heart, Handshake, Shield, Lightbulb, Brain, Code, Palette, UserCheck } from "lucide-react";
+import { Users, Heart, Handshake, Shield, Lightbulb, Brain, Code, Palette, UserCheck, Sparkles, Cog, Zap, Target, Eye, Puzzle, Network, Compass } from "lucide-react";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 
 const About = () => {
@@ -37,6 +37,32 @@ const About = () => {
     { year: "2021", event: "Expansión al sector sociosanitario" },
     { year: "2022", event: "Desarrollo de metodología A2U" },
     { year: "2024", event: "Más de 50 organizaciones transformadas" }
+  ];
+
+  const workAreas = [
+    {
+      icon: Heart,
+      title: "Transforming Care",
+      description: "Área centrada en el diseño de servicios, experiencias y procesos centrados en las personas. Foco en innovación en atención, interacción, participación y rediseño organizacional.",
+      color: "bg-gradient-to-br from-accent/20 to-accent/30"
+    },
+    {
+      icon: Cog,
+      title: "Technology & Services",
+      description: "Área dedicada a la integración de soluciones tecnológicas con propósito.",
+      color: "bg-gradient-to-br from-primary/20 to-primary/30"
+    }
+  ];
+
+  const teamMembers = [
+    { icon: Compass, role: "Visionario estratégico", symbol: "compass", color: "text-primary" },
+    { icon: Puzzle, role: "Integrador de sistemas", symbol: "puzzle", color: "text-accent" },
+    { icon: Eye, role: "Observador empático", symbol: "eye", color: "text-secondary" },
+    { icon: Sparkles, role: "Catalizador creativo", symbol: "sparkles", color: "text-primary" },
+    { icon: Network, role: "Conector humano", symbol: "network", color: "text-accent" },
+    { icon: Target, role: "Enfocador de resultados", symbol: "target", color: "text-secondary" },
+    { icon: Zap, role: "Energizador de cambio", symbol: "zap", color: "text-primary" },
+    { icon: Brain, role: "Arquitecto de soluciones", symbol: "brain", color: "text-accent" }
   ];
 
   return (
@@ -82,6 +108,29 @@ const About = () => {
           </div>
         </div>
 
+        {/* Work Areas Structure */}
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
+            Nuestra estructura interna
+          </h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {workAreas.map((area, index) => (
+              <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-0 overflow-hidden">
+                <div className={`h-2 ${area.color}`}></div>
+                <CardContent className="p-8">
+                  <div className="flex items-center mb-6">
+                    <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
+                      <area.icon className="w-7 h-7 text-accent" />
+                    </div>
+                    <h4 className="text-xl font-bold text-primary">{area.title}</h4>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Values */}
         <div className="mb-16">
           <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
@@ -108,61 +157,80 @@ const About = () => {
             Nuestro equipo
           </h3>
           
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Visual representation */}
-            <div className="relative">
-              <div className="rounded-lg overflow-hidden shadow-soft">
-                <img 
-                  src={teamCollaboration} 
-                  alt="Equipo ALDA2U trabajando colaborativamente" 
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-              {/* Floating elements representing team diversity */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-medium animate-pulse">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <div className="absolute top-1/2 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-medium">
-                <Code className="w-6 h-6 text-white" />
-              </div>
-              <div className="absolute -bottom-4 left-1/3 w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-medium">
-                <Palette className="w-7 h-7 text-primary" />
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="space-y-6">
-              <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg">
-                <p className="text-lg text-foreground leading-relaxed italic">
-                  "Un equipo interdisciplinario que piensa, diseña y acompaña. Sumamos capacidades según las necesidades de cada proyecto."
-                </p>
-              </div>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                Trabajamos como una comunidad de práctica, donde cada miembro aporta su expertise para crear soluciones integrales y sostenibles.
+          <div className="text-center mb-12">
+            <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg max-w-4xl mx-auto mb-8">
+              <p className="text-lg text-foreground leading-relaxed italic">
+                "Ocho personas únicas que se complementan, cada una con su esencia y especialidad, trabajando como un ecosistema colaborativo."
               </p>
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              Representamos a nuestro equipo a través de símbolos que evocan cómo trabajamos, qué nos representa y cómo nos complementamos en cada proyecto.
+            </p>
+          </div>
 
-              {/* Team expertise areas */}
-              <div className="grid grid-cols-2 gap-4 mt-8">
-                {[
-                  { icon: Brain, label: "Estrategia" },
-                  { icon: Code, label: "Tecnología" },
-                  { icon: Palette, label: "Diseño" },
-                  { icon: UserCheck, label: "Experiencia" }
-                ].map((area, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-background/50 rounded-lg border border-border/50">
-                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-                      <area.icon className="w-4 h-4 text-accent" />
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{area.label}</span>
+          {/* Symbolic Team Representation */}
+          <div className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 rounded-2xl p-12 mb-12">
+            {/* Central connecting element */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
+              <Users className="w-10 h-10 text-accent" />
+            </div>
+            
+            {/* Team members arranged in a circle */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
+              {teamMembers.map((member, index) => {
+                const positions = [
+                  "top-0 left-1/4", "top-0 right-1/4", "top-1/2 left-0", "top-1/2 right-0",
+                  "bottom-1/2 left-0", "bottom-1/2 right-0", "bottom-0 left-1/4", "bottom-0 right-1/4"
+                ];
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="relative group"
+                  >
+                    <Card className="hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-border/50 backdrop-blur-sm bg-background/60">
+                      <CardContent className="p-6 text-center">
+                        <div className={`w-16 h-16 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 transition-all duration-300 group-hover:scale-110`}>
+                          <member.icon className={`w-8 h-8 ${member.color}`} />
+                        </div>
+                        <h4 className="text-sm font-semibold text-primary mb-2">{member.role}</h4>
+                        <div className="w-8 h-0.5 bg-accent mx-auto opacity-50"></div>
+                      </CardContent>
+                    </Card>
+                    
+                    {/* Connecting lines */}
+                    <div className="absolute top-1/2 left-1/2 w-8 h-0.5 bg-gradient-to-r from-accent/30 to-transparent transform -translate-y-1/2 translate-x-full hidden md:block"></div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
+            </div>
+            
+            {/* Floating connection symbols */}
+            <div className="absolute top-4 right-4 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
+              <Sparkles className="w-4 h-4 text-primary" />
+            </div>
+            <div className="absolute bottom-4 left-4 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center animate-pulse delay-1000">
+              <Heart className="w-4 h-4 text-accent" />
+            </div>
+            <div className="absolute top-4 left-4 w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center animate-pulse delay-2000">
+              <Lightbulb className="w-4 h-4 text-secondary" />
+            </div>
+          </div>
 
-              <div className="text-center pt-4">
-                <span className="text-2xl font-bold text-primary">8</span>
-                <span className="text-muted-foreground ml-2">profesionales especializados</span>
-              </div>
+          {/* Team stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-3xl font-bold text-primary mb-2">8</div>
+              <div className="text-muted-foreground">Profesionales especializados</div>
+            </div>
+            <div className="p-6">
+              <div className="text-3xl font-bold text-accent mb-2">∞</div>
+              <div className="text-muted-foreground">Posibilidades de colaboración</div>
+            </div>
+            <div className="p-6">
+              <div className="text-3xl font-bold text-secondary mb-2">1</div>
+              <div className="text-muted-foreground">Visión compartida</div>
             </div>
           </div>
         </div>

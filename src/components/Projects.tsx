@@ -1,58 +1,43 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Stethoscope, Heart, Users, Phone, Building } from "lucide-react";
-import nereaCareImage from "@/assets/nerea-care.jpg";
-import care2uImage from "@/assets/care2u.jpg";
-import elkarBizituImage from "@/assets/elkar-bizitu.jpg";
-import heldukZabaltzenImage from "@/assets/helduak-zabaltzen.jpg";
-import teleasistenciaImage from "@/assets/teleasistencia.jpg";
+import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
       icon: Stethoscope,
-      title: "Nerea Care",
-      challenge: "Digitalización de procesos asistenciales",
-      solution: "Plataforma integral para gestión de cuidados personalizados",
-      impact: "Mejora del 40% en coordinación entre profesionales y mayor satisfacción del paciente",
-      tags: ["Digitalización", "Cuidados", "UX/UI"],
-      image: nereaCareImage
+      name: "Nerea Care",
+      intervention: "Diseño de servicio digital",
+      whatWeDid: "Diseñamos una plataforma integral que digitaliza y optimiza procesos asistenciales, centrándose en la experiencia tanto de profesionales como de pacientes.",
+      ourContribution: "Transformación digital que humaniza la tecnología en el cuidado"
     },
     {
       icon: Heart,
-      title: "CARE2U",
-      challenge: "Coordinación sociosanitaria fragmentada",
-      solution: "Sistema de interoperabilidad entre servicios sociales y sanitarios",
-      impact: "Reducción de tiempos de gestión y mejor continuidad asistencial",
-      tags: ["Interoperabilidad", "Coordinación", "Eficiencia"],
-      image: care2uImage
+      name: "CARE2U",
+      intervention: "Acompañamiento estratégico de interoperabilidad",
+      whatWeDid: "Facilitamos la creación de un ecosistema de interoperabilidad entre servicios sociales y sanitarios, mejorando la coordinación y continuidad asistencial.",
+      ourContribution: "Puente tecnológico que conecta cuidados fragmentados"
     },
     {
       icon: Users,
-      title: "Elkar Bizitu",
-      challenge: "Inclusión social de personas en situación vulnerable",
-      solution: "Metodología participativa para diseño de servicios inclusivos",
-      impact: "Aumento del 60% en la participación activa de usuarios en servicios sociales",
-      tags: ["Inclusión", "Participación", "Servicios Sociales"],
-      image: elkarBizituImage
+      name: "Elkar Bizitu",
+      intervention: "Metodología participativa",
+      whatWeDid: "Desarrollamos una metodología que pone a las personas en situación vulnerable en el centro del diseño de servicios sociales, potenciando su participación activa.",
+      ourContribution: "Empoderamiento real de personas usuarias como co-creadoras"
     },
     {
       icon: Building,
-      title: "Helduak Zabaltzen",
-      challenge: "Envejecimiento activo en entornos rurales",
-      solution: "Red de apoyo comunitario con herramientas digitales adaptadas",
-      impact: "Fortalecimiento de vínculos comunitarios y mejora de calidad de vida",
-      tags: ["Envejecimiento", "Comunidad", "Innovación Social"],
-      image: heldukZabaltzenImage
+      name: "Helduak Zabaltzen",
+      intervention: "Innovación social comunitaria",
+      whatWeDid: "Creamos una red de apoyo comunitario que integra herramientas digitales adaptadas para promover el envejecimiento activo en entornos rurales.",
+      ourContribution: "Fortalecimiento de vínculos que trasciende lo digital"
     },
     {
       icon: Phone,
-      title: "Teleasistencia Cantabria",
-      challenge: "Modernización del servicio de teleasistencia regional",
-      solution: "Rediseño integral del servicio con enfoque centrado en el usuario",
-      impact: "Mayor cobertura territorial y mejora en tiempos de respuesta",
-      tags: ["Teleasistencia", "Gobierno", "Transformación Digital"],
-      image: teleasistenciaImage
+      name: "Proyecto de Teleasistencia – Gobierno de Cantabria",
+      intervention: "Rediseño de servicio público",
+      whatWeDid: "Lideramos la modernización integral del servicio de teleasistencia regional, aplicando un enfoque centrado en el usuario y optimizando procesos operativos.",
+      ourContribution: "Servicio público más humano y eficiente"
     }
   ];
 
@@ -62,77 +47,84 @@ const Projects = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">
-            Lo que somos capaces de imaginar, diseñar y hacer realidad
+            Capacidades y experiencias diseñadas
           </h2>
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
-            Cada proyecto es una oportunidad de transformación. Trabajamos con organizaciones para crear soluciones 
-            que generen un impacto real y duradero en las personas y comunidades.
+            Cada proyecto es una muestra de lo que somos capaces de imaginar, facilitar, diseñar y acompañar. 
+            Estas experiencias reflejan nuestro enfoque y metodología en acción.
           </p>
         </div>
 
         {/* Projects grid */}
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-strong transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-              
-              {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="w-12 h-12 bg-white/90 rounded-lg flex items-center justify-center">
+            <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border border-border/50">
+              <CardHeader className="pb-4">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                     <project.icon className="w-6 h-6 text-accent" />
                   </div>
-                </div>
-              </div>
-              
-              <CardHeader className="pb-4">
-                <div className="flex items-center justify-between mb-4">
-                  <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+                  <div className="flex-1">
+                    <CardTitle className="text-lg text-primary leading-tight">{project.name}</CardTitle>
                   </div>
                 </div>
+                <Badge variant="outline" className="text-xs w-fit">
+                  {project.intervention}
+                </Badge>
               </CardHeader>
 
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-primary mb-2">Desafío abordado</h4>
-                  <p className="text-muted-foreground leading-relaxed">{project.challenge}</p>
+                  <h4 className="font-semibold text-primary mb-2 text-sm">Qué hicimos</h4>
+                  <p className="text-muted-foreground leading-relaxed text-sm">{project.whatWeDid}</p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-primary mb-2">Solución diseñada</h4>
-                  <p className="text-foreground leading-relaxed">{project.solution}</p>
-                </div>
-
-                <div className="bg-accent/5 border-l-4 border-accent p-4 rounded-r-lg">
-                  <h4 className="font-semibold text-accent mb-2">Cambios logrados</h4>
-                  <p className="text-foreground leading-relaxed">{project.impact}</p>
-                </div>
+                {project.ourContribution && (
+                  <div className="bg-accent/5 border-l-3 border-accent p-3 rounded-r-lg">
+                    <h4 className="font-semibold text-accent mb-1 text-xs">Nuestra aportación</h4>
+                    <p className="text-foreground leading-relaxed text-sm italic">{project.ourContribution}</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Capabilities showcase */}
+        <div className="max-w-6xl mx-auto mt-20">
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
+            Lo que sabemos hacer
+          </h3>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Palette, label: "Diseño de experiencias", description: "Creamos experiencias centradas en personas" },
+              { icon: Cog, label: "Integración de sistemas", description: "Conectamos tecnologías con propósito" },
+              { icon: Lightbulb, label: "Innovación metodológica", description: "Desarrollamos nuevas formas de trabajar" },
+              { icon: Target, label: "Acompañamiento estratégico", description: "Guiamos procesos de transformación" }
+            ].map((capability, index) => (
+              <Card key={index} className="text-center hover:shadow-soft transition-shadow duration-300">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
+                    <capability.icon className="w-7 h-7 text-accent" />
+                  </div>
+                  <h4 className="font-semibold text-primary mb-2 text-sm">{capability.label}</h4>
+                  <p className="text-muted-foreground text-xs leading-relaxed">{capability.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Call to action */}
         <div className="max-w-4xl mx-auto text-center mt-16">
           <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
             <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-              ¿Tienes un desafío que resolver?
+              ¿Qué podemos imaginar juntos?
             </h3>
             <p className="text-lg text-foreground leading-relaxed">
-              Cada organización tiene sus propias necesidades y contexto. Nos adaptamos para crear soluciones únicas 
-              que respondan a los desafíos específicos de tu sector y organización.
+              Cada desafío es único y requiere una aproximación específica. Exploremos las posibilidades 
+              que se abren cuando combinamos tu experiencia con nuestra metodología.
             </p>
           </div>
         </div>

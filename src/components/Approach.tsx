@@ -22,11 +22,6 @@ const Approach = () => {
       icon: Zap,
       title: "Adaptabilidad y acompañamiento",
       description: "Acompañamos durante todo el proceso, adaptándonos a las necesidades cambiantes de cada organización."
-    },
-    {
-      icon: Cpu,
-      title: "Digitalización y tecnología con sentido",
-      description: "Integramos tecnología como herramienta para mejorar procesos y aportar valor real a personas y organizaciones."
     }
   ];
 
@@ -39,7 +34,7 @@ const Approach = () => {
             Nuestro enfoque
           </h2>
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
-            Trabajamos desde cinco pilares fundamentales que guían nuestra metodología y definen nuestra forma de entender la transformación organizacional.
+            Trabajamos desde cuatro pilares fundamentales que guían nuestra metodología y definen nuestra forma de entender la transformación organizacional.
           </p>
         </div>
 
@@ -59,56 +54,6 @@ const Approach = () => {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* Technology philosophy */}
-        <div className="max-w-5xl mx-auto">
-          <Card className="shadow-medium border-accent/20">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center mb-8">
-                <div className="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center">
-                  <Cpu className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
-                  Digitalización y tecnología con sentido
-                </h3>
-              </div>
-              
-              <div className="bg-muted/30 rounded-lg p-6 md:p-8">
-                <p className="text-lg text-foreground leading-relaxed">
-                  Aunque nuestra base metodológica se apoya en la digitalización y el uso de herramientas tecnológicas, 
-                  <span className="font-semibold text-primary"> no creemos en la tecnología como fin, sino como un medio</span> para 
-                  mejorar procesos, facilitar el trabajo y aportar valor real a las personas y a la organización.
-                </p>
-              </div>
-              
-              <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Heart className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-primary mb-2">Centrada en personas</h4>
-                  <p className="text-sm text-muted-foreground">La tecnología debe servir a las personas, no al revés</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-primary mb-2">Con propósito claro</h4>
-                  <p className="text-sm text-muted-foreground">Cada solución tecnológica tiene un objetivo específico y medible</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Eye className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-primary mb-2">Sostenible</h4>
-                  <p className="text-sm text-muted-foreground">Soluciones que perduran y se adaptan al crecimiento</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

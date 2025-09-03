@@ -89,45 +89,6 @@ const Projects = () => {
             </Card>
           ))}
         </div>
-
-        {/* Capabilities showcase */}
-        <div className="max-w-6xl mx-auto mt-20">
-          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
-            Lo que sabemos hacer
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Palette, label: "Diseño de experiencias", description: "Creamos experiencias centradas en personas" },
-              { icon: Cog, label: "Integración de sistemas", description: "Conectamos tecnologías con propósito" },
-              { icon: Lightbulb, label: "Innovación metodológica", description: "Desarrollamos nuevas formas de trabajar" },
-              { icon: Target, label: "Acompañamiento estratégico", description: "Guiamos procesos de transformación" }
-            ].map((capability, index) => (
-              <Card key={index} className="text-center hover:shadow-soft transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 mx-auto mb-4 bg-accent/10 rounded-full flex items-center justify-center">
-                    <capability.icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <h4 className="font-semibold text-primary mb-2 text-sm">{capability.label}</h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed">{capability.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        {/* Call to action */}
-        <div className="max-w-4xl mx-auto text-center mt-16">
-          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
-            <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-              ¿Qué podemos imaginar juntos?
-            </h3>
-            <p className="text-lg text-foreground leading-relaxed">
-              Cada desafío es único y requiere una aproximación específica. Exploremos las posibilidades 
-              que se abren cuando combinamos tu experiencia con nuestra metodología.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

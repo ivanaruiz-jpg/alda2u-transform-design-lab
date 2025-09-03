@@ -41,9 +41,13 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">
             Contacto
           </h2>
-          <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg">
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed italic">
-              "¿Querés conversar sobre cómo acompañar un cambio en tu organización? Estamos para eso."
+          <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
+            <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
+              ¿Qué podemos imaginar juntos?
+            </h3>
+            <p className="text-lg text-foreground leading-relaxed">
+              Cada desafío es único y requiere una aproximación específica. Exploremos las posibilidades 
+              que se abren cuando combinamos tu experiencia con nuestra metodología.
             </p>
           </div>
         </div>

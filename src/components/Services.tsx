@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Users, Cog, Target, Stethoscope, Lightbulb, Globe, Settings } from "lucide-react";
+import { Building2, Users, Cog, Target, Stethoscope, Lightbulb, Globe, Settings, Heart, Eye, Zap } from "lucide-react";
 import servicesImage from "@/assets/services-design.jpg";
 
 const Services = () => {
@@ -54,6 +54,29 @@ const Services = () => {
     }
   ];
 
+  const methodologyPillars = [
+    {
+      icon: Heart,
+      title: "Diseño centrado en las personas",
+      description: "Ponemos a las personas en el centro de cada decisión, considerando sus necesidades, emociones y experiencias."
+    },
+    {
+      icon: Users,
+      title: "Participación como motor de cambio",
+      description: "Involucramos activamente a todos los actores relevantes en el proceso de diseño y transformación."
+    },
+    {
+      icon: Eye,
+      title: "Mirada sistémica",
+      description: "Analizamos el contexto completo, considerando todas las interacciones y dependencias del sistema."
+    },
+    {
+      icon: Zap,
+      title: "Adaptabilidad y acompañamiento",
+      description: "Acompañamos durante todo el proceso, adaptándonos a las necesidades cambiantes de cada organización."
+    }
+  ];
+
   return (
     <section id="services" className="py-20 bg-muted/20">
       <div className="container mx-auto px-4">
@@ -90,9 +113,13 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Methodology */}
+        {/* Methodology and Approach */}
         <div className="mb-16 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
+            Nuestro enfoque y metodología
+          </h3>
+          
+          <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
             <div className="relative">
               <img 
                 src={servicesImage} 
@@ -102,14 +129,35 @@ const Services = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
             </div>
             <div className="bg-accent/5 border border-accent/20 rounded-lg p-8">
-              <h3 className="text-2xl font-semibold text-primary mb-4">
+              <h4 className="text-2xl font-semibold text-primary mb-4">
                 Metodología A2U
-              </h3>
-              <p className="text-lg text-foreground leading-relaxed">
+              </h4>
+              <p className="text-lg text-foreground leading-relaxed mb-4">
                 Nuestra metodología propia basada en <span className="font-semibold text-accent">Human-Centered Design</span> aplicado 
                 específicamente al ámbito sociosanitario, adaptada a las particularidades y necesidades de este sector.
               </p>
+              <p className="text-foreground leading-relaxed">
+                Trabajamos desde cuatro pilares fundamentales que guían nuestra metodología y definen nuestra forma de entender la transformación organizacional.
+              </p>
             </div>
+          </div>
+
+          {/* Methodology Pillars */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {methodologyPillars.map((pillar, index) => (
+              <Card key={index} className="group hover:shadow-strong transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                    <pillar.icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <CardTitle className="text-primary text-lg leading-tight">{pillar.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  <p className="text-muted-foreground leading-relaxed text-sm">{pillar.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 

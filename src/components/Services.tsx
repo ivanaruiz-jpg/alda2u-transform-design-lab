@@ -39,8 +39,8 @@ const Services = () => {
     },
     {
       icon: Stethoscope,
-      title: "Transformación sociodigital",
-      description: "Integración de tecnología con propósito en organizaciones del sector sanitario y social."
+      title: "Consultoría de negocios",
+      description: "Asesoramiento estratégico para el desarrollo y crecimiento sostenible de organizaciones del sector sociosanitario."
     },
     {
       icon: Settings,

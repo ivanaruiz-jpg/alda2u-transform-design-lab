@@ -108,31 +108,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Work Areas Structure */}
-        <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
-            Nuestra estructura interna
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {workAreas.map((area, index) => (
-              <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-0 overflow-hidden">
-                <div className={`h-2 ${area.color}`}></div>
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
-                      <area.icon className="w-7 h-7 text-accent" />
-                    </div>
-                    <h4 className="text-xl font-bold text-primary">{area.title}</h4>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Values */}
-        <div className="mb-16">
+        <div className="mb-20">
           <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
             Nuestros valores
           </h3>
@@ -151,23 +128,52 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team */}
+        {/* Team and Structure */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
-            Nuestro equipo
+            Nuestro equipo y estructura
           </h3>
           
-          <div className="text-center mb-12">
-            <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg max-w-4xl mx-auto mb-8">
-              <p className="text-lg text-foreground leading-relaxed italic">
-                "Ocho personas únicas que se complementan, cada una con su esencia y especialidad, trabajando como un ecosistema colaborativo."
+          {/* Work Areas Structure */}
+          <div className="mb-16">
+            <h4 className="text-xl font-semibold text-primary text-center mb-8">
+              Cómo nos organizamos
+            </h4>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+              {workAreas.map((area, index) => (
+                <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-0 overflow-hidden">
+                  <div className={`h-2 ${area.color}`}></div>
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-6">
+                      <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mr-4 group-hover:bg-accent/20 transition-colors">
+                        <area.icon className="w-7 h-7 text-accent" />
+                      </div>
+                      <h5 className="text-xl font-bold text-primary">{area.title}</h5>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Team composition */}
+          <div>
+            <h4 className="text-xl font-semibold text-primary text-center mb-8">
+              Quiénes somos
+            </h4>
+            
+            <div className="text-center mb-12">
+              <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg max-w-4xl mx-auto mb-8">
+                <p className="text-lg text-foreground leading-relaxed italic">
+                  "Ocho personas únicas que se complementan, cada una con su esencia y especialidad, trabajando como un ecosistema colaborativo."
+                </p>
+              </div>
+              
+              <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Representamos a nuestro equipo a través de símbolos que evocan cómo trabajamos, qué nos representa y cómo nos complementamos en cada proyecto.
               </p>
             </div>
-            
-            <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Representamos a nuestro equipo a través de símbolos que evocan cómo trabajamos, qué nos representa y cómo nos complementamos en cada proyecto.
-            </p>
-          </div>
 
           {/* Symbolic Team Representation */}
           <div className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 rounded-2xl p-12 mb-12">
@@ -231,6 +237,7 @@ const About = () => {
             <div className="p-6">
               <div className="text-3xl font-bold text-secondary mb-2">1</div>
               <div className="text-muted-foreground">Visión compartida</div>
+            </div>
             </div>
           </div>
         </div>

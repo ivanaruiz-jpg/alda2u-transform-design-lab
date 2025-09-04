@@ -47,7 +47,7 @@ const Projects = () => {
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">
-            Capacidades y experiencias diseñadas
+            Proyectos
           </h2>
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
             Cada proyecto es una muestra de lo que somos capaces de imaginar, facilitar, diseñar y acompañar. 

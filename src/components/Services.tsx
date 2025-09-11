@@ -50,7 +50,7 @@ const Services = () => {
     {
       icon: Building2,
       title: "Interoperabilidad sociosanitaria",
-      description: "Soluciones para la integración y comunicación entre sistemas y organizaciones."
+      description: "Soluciones para la integración, coordinación y comunicación entre sistemas y organizaciones."
     }
   ];
 

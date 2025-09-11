@@ -7,6 +7,7 @@ const Projects = () => {
     {
       icon: Stethoscope,
       name: "Nerea Care",
+      sector: "Empresas de cuidados - Atención domiciliaria",
       intervention: "Diseño de servicio digital",
       whatWeDid: "Diseñamos una plataforma integral que digitaliza y optimiza procesos asistenciales, centrándose en la experiencia tanto de profesionales como de pacientes.",
       ourContribution: "Transformación digital que humaniza la tecnología en el cuidado"
@@ -14,6 +15,7 @@ const Projects = () => {
     {
       icon: Heart,
       name: "CARE2U",
+      sector: "Empresas de cuidados - Atención domiciliaria",
       intervention: "Acompañamiento estratégico de interoperabilidad",
       whatWeDid: "Facilitamos la creación de un ecosistema de interoperabilidad entre servicios sociales y sanitarios, mejorando la coordinación y continuidad asistencial.",
       ourContribution: "Puente tecnológico que conecta cuidados fragmentados"
@@ -21,6 +23,7 @@ const Projects = () => {
     {
       icon: Users,
       name: "Elkar Bizitu",
+      sector: "Participación ciudadana",
       intervention: "Metodología participativa",
       whatWeDid: "Desarrollamos una metodología que pone a las personas en situación vulnerable en el centro del diseño de servicios sociales, potenciando su participación activa.",
       ourContribution: "Empoderamiento real de personas usuarias como co-creadoras"
@@ -28,6 +31,7 @@ const Projects = () => {
     {
       icon: Building,
       name: "Helduak Zabaltzen",
+      sector: "Centros de mayores - Entorno comunitario",
       intervention: "Innovación social comunitaria",
       whatWeDid: "Creamos una red de apoyo comunitario que integra herramientas digitales adaptadas para promover el envejecimiento activo en entornos rurales.",
       ourContribution: "Fortalecimiento de vínculos que trasciende lo digital"
@@ -35,6 +39,7 @@ const Projects = () => {
     {
       icon: Phone,
       name: "Proyecto de Teleasistencia – Gobierno de Cantabria",
+      sector: "Sector público",
       intervention: "Rediseño de servicio público",
       whatWeDid: "Lideramos la modernización integral del servicio de teleasistencia regional, aplicando un enfoque centrado en el usuario y optimizando procesos operativos.",
       ourContribution: "Servicio público más humano y eficiente"
@@ -68,9 +73,14 @@ const Projects = () => {
                     <CardTitle className="text-lg text-primary leading-tight">{project.name}</CardTitle>
                   </div>
                 </div>
-                <Badge variant="outline" className="text-xs w-fit">
-                  {project.intervention}
-                </Badge>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="text-xs">
+                    {project.intervention}
+                  </Badge>
+                  <Badge variant="secondary" className="text-xs bg-primary/10 text-primary">
+                    {project.sector}
+                  </Badge>
+                </div>
               </CardHeader>
 
               <CardContent className="space-y-4">

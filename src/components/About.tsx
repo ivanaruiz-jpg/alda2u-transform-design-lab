@@ -51,7 +51,7 @@ const About = () => {
     {
       icon: Cog,
       title: "Technology & Services",
-      description: "Área dedicada a la integración de soluciones tecnológicas con propósito.",
+      description: "Es nuestro origen para la prestación de servicios tecnológicos que atiende a diversidad de clientes desde Salesforce hasta soluciones de pesca.",
       color: "bg-gradient-to-br from-primary/20 to-primary/30"
     }
   ];

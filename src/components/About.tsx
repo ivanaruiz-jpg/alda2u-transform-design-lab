@@ -45,7 +45,7 @@ const About = () => {
     {
       icon: Heart,
       title: "Transforming Care",
-      description: "Área centrada en el diseño de servicios, experiencias y procesos centrados en las personas. Foco en innovación en atención, interacción, participación y rediseño organizacional.",
+      description: "Área centrada en el diseño de servicios, experiencias y procesos centrados en las personas en el sector salud, social y sociosanitario. Foco en innovación en atención, interacción, participación y rediseño organizacional.",
       color: "bg-gradient-to-br from-accent/20 to-accent/30"
     },
     {

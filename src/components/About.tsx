@@ -28,6 +28,11 @@ const About = () => {
       icon: Lightbulb,
       title: "Transformación con sentido",
       description: "Cada cambio que proponemos tiene un propósito claro y aporta valor real a la organización y las personas."
+    },
+    {
+      icon: Sparkles,
+      title: "Innovación",
+      description: "Exploramos nuevas formas de hacer las cosas, adaptándonos constantemente para ofrecer soluciones creativas y efectivas."
     }
   ];
 

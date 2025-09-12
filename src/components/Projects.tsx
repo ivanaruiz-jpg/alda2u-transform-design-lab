@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home } from "lucide-react";
 
 const Projects = () => {
@@ -76,44 +77,58 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border border-border/50">
-              <CardHeader className="pb-4">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                    <project.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg text-primary leading-tight">{project.name}</CardTitle>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs">
-                    {project.intervention}
-                  </Badge>
-                  <Badge variant="secondary" className="text-xs bg-primary/10 text-primary">
-                    {project.sector}
-                  </Badge>
-                </div>
-              </CardHeader>
+        {/* Projects carousel */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {projects.map((project, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border border-border/50 h-full">
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors">
+                          <project.icon className="w-6 h-6 text-accent" />
+                        </div>
+                        <div className="flex-1">
+                          <CardTitle className="text-lg text-primary leading-tight">{project.name}</CardTitle>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        <Badge variant="outline" className="text-xs">
+                          {project.intervention}
+                        </Badge>
+                        <Badge variant="secondary" className="text-xs bg-primary/10 text-primary">
+                          {project.sector}
+                        </Badge>
+                      </div>
+                    </CardHeader>
 
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-primary mb-2 text-sm">Qué hicimos</h4>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{project.whatWeDid}</p>
-                </div>
+                    <CardContent className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-primary mb-2 text-sm">Qué hicimos</h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">{project.whatWeDid}</p>
+                      </div>
 
-                {project.ourContribution && (
-                  <div className="bg-accent/5 border-l-3 border-accent p-3 rounded-r-lg">
-                    <h4 className="font-semibold text-accent mb-1 text-xs">Nuestra aportación</h4>
-                    <p className="text-foreground leading-relaxed text-sm italic">{project.ourContribution}</p>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+                      {project.ourContribution && (
+                        <div className="bg-accent/5 border-l-3 border-accent p-3 rounded-r-lg">
+                          <h4 className="font-semibold text-accent mb-1 text-xs">Nuestra aportación</h4>
+                          <p className="text-foreground leading-relaxed text-sm italic">{project.ourContribution}</p>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </div>
     </section>

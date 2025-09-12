@@ -5,9 +5,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">ALDA2U</h3>
+            <div className="flex items-center mb-4">
+              <span className="text-2xl font-bold text-primary-foreground">ALDA</span>
+              <span className="text-2xl font-bold text-accent transform scale-110">2U</span>
+            </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Transformamos organizaciones desde el diseño, la estrategia y la empatía.
+            </p>
+            <p className="text-accent/90 text-sm mt-2 italic">
+              Diseñamos el cambio contigo • Para ti • ALDA to you
             </p>
           </div>
 
@@ -34,11 +40,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/60">
-            © {new Date().getFullYear()} ALDA2U. Todos los derechos reservados.
-          </p>
-        </div>
+          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
+            <p className="text-primary-foreground/60">
+              © {new Date().getFullYear()} ALDA2U • Transformamos para ti • Todos los derechos reservados.
+            </p>
+          </div>
       </div>
     </footer>
   );

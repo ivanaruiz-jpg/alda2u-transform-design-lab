@@ -16,8 +16,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-muted">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="text-2xl font-bold text-primary">
-          ALDA2U
+        <div className="flex items-center">
+          <span className="text-2xl font-bold text-primary">ALDA</span>
+          <span className="text-2xl font-bold text-accent transform scale-110">2U</span>
         </div>
         
         {/* Desktop Navigation */}
@@ -47,7 +48,7 @@ const Header = () => {
             Proyectos
           </button>
           <Button 
-            variant="accent" 
+            variant="transform" 
             onClick={() => scrollToSection('contact')}
           >
             Contacto
@@ -92,7 +93,7 @@ const Header = () => {
               Proyectos
             </button>
             <Button 
-              variant="accent" 
+              variant="transform" 
               className="w-full"
               onClick={() => scrollToSection('contact')}
             >

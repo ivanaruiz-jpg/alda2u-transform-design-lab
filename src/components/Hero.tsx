@@ -22,17 +22,27 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
       </div>
       
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-primary rounded-full mix-blend-multiply"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent rounded-full mix-blend-multiply"></div>
+      {/* Background pattern with new brand colors */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-64 h-64 bg-primary rounded-full mix-blend-multiply animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent rounded-full mix-blend-multiply animate-pulse"></div>
+        <div className="absolute top-40 right-40 w-32 h-32 bg-warm rounded-full mix-blend-multiply"></div>
+        <div className="absolute bottom-40 left-40 w-48 h-48 bg-olive rounded-full mix-blend-multiply"></div>
       </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary leading-tight">
-            ALDA2U
-          </h1>
+          <div className="text-center">
+            <div className="flex items-center justify-center mb-4">
+              <span className="text-6xl md:text-8xl font-bold text-primary">ALDA</span>
+              <span className="text-6xl md:text-8xl font-bold text-accent transform scale-125 mx-2">2U</span>
+            </div>
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-lg md:text-xl font-medium">
+              <span className="text-primary border-b-2 border-primary/30">Transformamos</span>
+              <span className="text-muted-foreground">+</span>
+              <span className="text-accent border-b-2 border-accent/30">Para ti</span>
+            </div>
+          </div>
           
           <div className="space-y-6">
             <p className="text-xl md:text-2xl text-foreground leading-relaxed">
@@ -40,29 +50,29 @@ const Hero = () => {
               <span className="text-primary font-semibold"> sanitario, social y sociosanitario</span>
             </p>
             
-            <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg max-w-3xl mx-auto">
+            <div className="bg-gradient-to-r from-accent/10 to-warm/10 border-l-4 border-accent p-6 rounded-lg max-w-3xl mx-auto">
               <p className="text-2xl md:text-3xl font-semibold text-primary italic">
-                "Transformamos organizaciones desde el diseño, la estrategia y la empatía."
+                "Diseñamos el cambio contigo, desde la estrategia y la empatía."
               </p>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button 
-              variant="gradient" 
+              variant="transform" 
               size="lg"
               onClick={() => scrollToSection('approach')}
               className="px-8"
             >
-              Conoce nuestro enfoque
+              Descubre cómo transformamos
             </Button>
             <Button 
               variant="outline" 
               size="lg"
               onClick={() => scrollToSection('about')}
-              className="px-8"
+              className="px-8 border-accent text-accent hover:bg-accent hover:text-white"
             >
-              Descubre cómo trabajamos
+              Trabajamos para ti
             </Button>
           </div>
         </div>

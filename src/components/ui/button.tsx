@@ -21,6 +21,8 @@ const buttonVariants = cva(
         gradient: "bg-gradient-primary text-primary-foreground hover:scale-105 shadow-soft hover:shadow-medium",
         accent: "bg-accent text-accent-foreground hover:bg-accent-light shadow-soft hover:shadow-medium",
         warm: "bg-warm text-white hover:bg-warm/90 shadow-soft hover:shadow-medium",
+        olive: "bg-olive text-white hover:bg-olive-light shadow-soft hover:shadow-medium",
+        transform: "bg-gradient-transform text-white hover:scale-105 shadow-soft hover:shadow-medium",
       },
       size: {
         default: "h-10 px-4 py-2",

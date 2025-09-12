@@ -50,6 +50,10 @@ export default {
 					DEFAULT: 'hsl(var(--warm))',
 					light: 'hsl(var(--warm-light))'
 				},
+				olive: {
+					DEFAULT: 'hsl(var(--olive))',
+					light: 'hsl(var(--olive-light))'
+				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -121,7 +125,8 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-accent': 'var(--gradient-accent)',
-				'gradient-warm': 'var(--gradient-warm)'
+				'gradient-warm': 'var(--gradient-warm)',
+				'gradient-transform': 'var(--gradient-transform)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',

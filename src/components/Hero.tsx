@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-abstract.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -16,7 +16,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="ALDA2U - Transformación en salud y servicios sociales" 
+          alt="ALDA2U - Diseño abstracto representando transformación y conexión humana" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>

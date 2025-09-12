@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap } from "lucide-react";
+import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -51,6 +51,14 @@ const Projects = () => {
       intervention: "Coordinación técnica estratégica",
       whatWeDid: "Acompañamos el desarrollo y consolidación de la interoperabilidad sociosanitaria, coordinando informes de ética, apoyando estrategias regionales, diseñando portales y gestores de casos, y organizando encuentros del sector.",
       ourContribution: "Metodología y coordinación que fortalece el ecosistema sociosanitario"
+    },
+    {
+      icon: Home,
+      name: "Proyecto de Cohousing",
+      sector: "Vivienda colaborativa",
+      intervention: "Integración tecnológica",
+      whatWeDid: "Diseño de la incorporación de tecnología para el bienestar en espacios convivenciales.",
+      ourContribution: "Tecnología humanizada que potencia la vida comunitaria"
     }
   ];
 

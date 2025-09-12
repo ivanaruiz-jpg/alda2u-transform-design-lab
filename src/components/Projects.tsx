@@ -47,7 +47,7 @@ const Projects = () => {
     {
       icon: Zap,
       name: "Oficina Técnica para la Interoperabilidad Sociosanitaria",
-      sector: "Interoperabilidad sociosanitaria",
+      sector: "Sector público",
       intervention: "Coordinación técnica estratégica",
       whatWeDid: "Acompañamos el desarrollo y consolidación de la interoperabilidad sociosanitaria, coordinando informes de ética, apoyando estrategias regionales, diseñando portales y gestores de casos, y organizando encuentros del sector.",
       ourContribution: "Metodología y coordinación que fortalece el ecosistema sociosanitario"

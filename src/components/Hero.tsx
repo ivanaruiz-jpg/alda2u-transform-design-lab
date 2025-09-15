@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-abstract.jpg";
+import logoVertical from "@/assets/alda2u-logo-vertical.png";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -33,9 +34,12 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <span className="text-6xl md:text-8xl font-bold text-primary">ALDA</span>
-              <span className="text-6xl md:text-8xl font-bold text-accent transform scale-125 mx-2">2U</span>
+            <div className="flex items-center justify-center mb-6">
+              <img 
+                src={logoVertical} 
+                alt="ALDA2U - Logo vertical" 
+                className="h-32 md:h-40"
+              />
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-lg md:text-xl font-medium">
               <span className="text-primary border-b-2 border-primary/30">Transformamos</span>

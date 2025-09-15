@@ -1,3 +1,5 @@
+import isotipo from "@/assets/alda2u-isotipo.png";
+
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-12">
@@ -6,8 +8,13 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-primary-foreground">ALDA</span>
-              <span className="text-2xl font-bold text-accent transform scale-110">2U</span>
+              <img 
+                src={isotipo} 
+                alt="ALDA2U - Isotipo" 
+                className="h-8 w-8 mr-3"
+              />
+              <span className="text-2xl font-bold text-primary-foreground">alda</span>
+              <span className="text-2xl font-bold text-accent">2U</span>
             </div>
             <p className="text-primary-foreground/80 leading-relaxed">
               Transformamos organizaciones desde el diseño, la estrategia y la empatía.

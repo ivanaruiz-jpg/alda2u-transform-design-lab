@@ -9,57 +9,57 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 35 15% 97%;
-    --foreground: 30 8% 20%;
+    --background: 0 0% 98%;
+    --foreground: 225 30% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 8% 20%;
+    --card-foreground: 225 30% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 8% 20%;
+    --popover-foreground: 225 30% 20%;
 
-    /* Primary: Terracotta - represents transformation and warmth */
-    --primary: 15 65% 45%;
+    /* Primary: Navy blue (#354e8c) - professional transformation */
+    --primary: 225 45% 37%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 15 55% 55%;
+    --primary-light: 225 35% 55%;
     
-    /* Secondary: Stone gray - professional balance */
-    --secondary: 30 8% 85%;
-    --secondary-foreground: 30 8% 20%;
+    /* Secondary: Light mint background */
+    --secondary: 170 50% 85%;
+    --secondary-foreground: 225 45% 25%;
 
-    /* Muted: warm neutral tones */
-    --muted: 35 12% 92%;
-    --muted-foreground: 30 6% 50%;
+    /* Muted: neutral variations */
+    --muted: 170 30% 92%;
+    --muted-foreground: 225 20% 50%;
 
-    /* Accent: Coral - human connection "to you" */
-    --accent: 5 75% 65%;
-    --accent-foreground: 0 0% 98%;
-    --accent-light: 5 65% 75%;
+    /* Accent: Mint green (#b5ecdf) - human connection "to you" */
+    --accent: 170 60% 80%;
+    --accent-foreground: 225 45% 25%;
+    --accent-light: 170 40% 90%;
 
-    /* Support colors for variety */
-    --warm: 45 85% 60%; /* Soft mustard */
-    --warm-light: 45 75% 80%;
+    /* Support colors derived from brand palette */
+    --warm: 170 45% 75%;
+    --warm-light: 170 30% 90%;
     
-    --olive: 75 35% 45%; /* Olive green */
-    --olive-light: 75 25% 65%;
+    --olive: 170 35% 65%;
+    --olive-light: 170 25% 80%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 35 15% 88%;
-    --input: 35 15% 88%;
-    --ring: 15 65% 45%;
+    --border: 170 30% 88%;
+    --input: 170 30% 88%;
+    --ring: 225 45% 37%;
 
     /* Brand gradients reflecting transformation */
-    --gradient-primary: linear-gradient(135deg, hsl(15 65% 45%), hsl(5 75% 65%));
-    --gradient-accent: linear-gradient(135deg, hsl(5 75% 65%), hsl(45 85% 60%));
-    --gradient-warm: linear-gradient(135deg, hsl(45 85% 60%), hsl(75 35% 45%));
-    --gradient-transform: linear-gradient(45deg, hsl(15 65% 45%), hsl(75 35% 45%));
+    --gradient-primary: linear-gradient(135deg, hsl(225 45% 37%), hsl(170 60% 80%));
+    --gradient-accent: linear-gradient(135deg, hsl(170 60% 80%), hsl(170 45% 75%));
+    --gradient-warm: linear-gradient(135deg, hsl(170 45% 75%), hsl(170 35% 65%));
+    --gradient-transform: linear-gradient(45deg, hsl(225 45% 37%), hsl(170 35% 65%));
     
-    /* Organic shadows for human touch */
-    --shadow-soft: 0 4px 20px -4px hsl(15 65% 45% / 0.12);
-    --shadow-medium: 0 8px 30px -8px hsl(15 65% 45% / 0.18);
-    --shadow-strong: 0 20px 40px -12px hsl(15 65% 45% / 0.25);
+    /* Organic shadows with brand colors */
+    --shadow-soft: 0 4px 20px -4px hsl(225 45% 37% / 0.12);
+    --shadow-medium: 0 8px 30px -8px hsl(225 45% 37% / 0.18);
+    --shadow-strong: 0 20px 40px -12px hsl(225 45% 37% / 0.25);
 
     --radius: 0.5rem;
 
@@ -85,33 +85,39 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 225 30% 8%;
+    --foreground: 170 40% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 225 30% 8%;
+    --card-foreground: 170 40% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 225 30% 8%;
+    --popover-foreground: 170 40% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary: Lighter navy for dark mode */
+    --primary: 225 55% 65%;
+    --primary-foreground: 225 30% 8%;
+    --primary-light: 225 45% 80%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary: Darker mint */
+    --secondary: 170 30% 20%;
+    --secondary-foreground: 170 50% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted: dark variations */
+    --muted: 225 20% 17%;
+    --muted-foreground: 170 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent: Brighter mint for dark mode */
+    --accent: 170 50% 75%;
+    --accent-foreground: 225 30% 8%;
+    --accent-light: 170 30% 85%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 225 20% 17%;
+    --input: 225 20% 17%;
+    --ring: 170 50% 75%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

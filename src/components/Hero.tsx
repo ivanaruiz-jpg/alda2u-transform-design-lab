@@ -74,7 +74,7 @@ const Hero = () => {
               variant="outline" 
               size="lg"
               onClick={() => scrollToSection('about')}
-              className="px-8 border-accent text-accent hover:bg-accent hover:text-white"
+              className="px-8 bg-accent/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
               Trabajamos para ti
             </Button>

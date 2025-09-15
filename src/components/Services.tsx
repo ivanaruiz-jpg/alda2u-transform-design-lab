@@ -133,7 +133,7 @@ const Services = () => {
                 Metodología A2U
               </h4>
               <p className="text-lg text-foreground leading-relaxed mb-4">
-                Nuestra metodología propia basada en <span className="font-semibold text-accent">Human-Centered Design</span> aplicado 
+                Nuestra metodología propia basada en <span className="font-semibold text-primary">Human-Centered Design</span> aplicado 
                 específicamente al ámbito sociosanitario, adaptada a las particularidades y necesidades de este sector.
               </p>
               <p className="text-foreground leading-relaxed">

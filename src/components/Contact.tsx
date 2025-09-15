@@ -127,8 +127,8 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-accent" />
+                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                       <Mail className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <p className="font-semibold text-primary">Email</p>
@@ -137,8 +137,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-accent" />
+                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                       <Phone className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <p className="font-semibold text-primary">Teléfono</p>
@@ -147,8 +147,8 @@ const Contact = () => {
                   </div>
 
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-accent" />
+                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                       <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <p className="font-semibold text-primary">Ubicación</p>

@@ -88,22 +88,28 @@ const About = () => {
         </div>
 
         {/* Timeline */}
-        <div className="mb-16">
-          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
             Nuestro recorrido
           </h3>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-accent"></div>
+              
               {milestones.map((milestone, index) => (
-                <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-3 h-3 bg-accent rounded-full flex-shrink-0"></div>
-                      <div className="text-accent font-bold text-base">{milestone.year}</div>
-                    </div>
-                    <p className="text-foreground text-sm leading-relaxed">{milestone.event}</p>
-                  </CardContent>
-                </Card>
+                <div key={index} className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
+                    <Card className="shadow-soft hover:shadow-medium transition-shadow duration-300">
+                      <CardContent className="p-6">
+                        <div className="text-accent font-bold text-lg mb-2">{milestone.year}</div>
+                        <p className="text-foreground">{milestone.event}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  {/* Timeline dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-soft"></div>
+                </div>
               ))}
             </div>
           </div>

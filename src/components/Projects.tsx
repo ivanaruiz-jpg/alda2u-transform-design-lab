@@ -92,8 +92,8 @@ const Projects = () => {
                   <Card className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border border-border/50 h-full">
                     <CardHeader className="pb-4">
                       <div className="flex items-center gap-3 mb-4">
-                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                           <project.icon className="w-6 h-6 text-primary" />
+                         <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center group-hover:bg-accent/80 transition-colors">
+                            <project.icon className="w-6 h-6 text-primary" />
                         </div>
                         <div className="flex-1">
                           <CardTitle className="text-lg text-primary leading-tight">{project.name}</CardTitle>

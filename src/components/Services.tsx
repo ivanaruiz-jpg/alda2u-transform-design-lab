@@ -100,8 +100,8 @@ const Services = () => {
             {areas.map((area, index) => (
               <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2">
                 <CardHeader className="text-center pb-4">
-                  <div className="w-20 h-20 mx-auto mb-4 bg-gradient-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <area.icon className="w-10 h-10 text-white" />
+                  <div className="w-20 h-20 mx-auto mb-4 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <area.icon className="w-10 h-10 text-primary" />
                   </div>
                   <CardTitle className="text-primary">{area.title}</CardTitle>
                 </CardHeader>
@@ -148,8 +148,8 @@ const Services = () => {
               <Card key={index} className="group hover:shadow-strong transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                 <CardHeader className="text-center pb-4">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-accent/10 rounded-full flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                    <pillar.icon className="w-8 h-8 text-accent" />
+                  <div className="w-16 h-16 mx-auto mb-6 bg-accent rounded-full flex items-center justify-center group-hover:bg-accent/80 group-hover:scale-110 transition-all duration-300">
+                    <pillar.icon className="w-8 h-8 text-primary" />
                   </div>
                   <CardTitle className="text-primary text-lg leading-tight">{pillar.title}</CardTitle>
                 </CardHeader>
@@ -171,8 +171,8 @@ const Services = () => {
               <Card key={index} className="group hover:shadow-medium transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
-                      <service.icon className="w-6 h-6 text-accent" />
+                    <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center group-hover:bg-accent/80 transition-colors flex-shrink-0">
+                      <service.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-primary mb-2">{service.title}</h4>

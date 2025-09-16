@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, Heart, Handshake, Shield, Lightbulb, Brain, Code, Palette, UserCheck, Sparkles, Cog, Zap, Target, Eye, Puzzle, Network, Compass } from "lucide-react";
+import { Users, Heart, Handshake, Shield, Lightbulb, Brain, Code, Palette, UserCheck, Sparkles, Cog, Zap, Target, Eye, Puzzle, Network, Compass, Monitor } from "lucide-react";
 import teamCollaboration from "@/assets/team-collaboration.jpg";
 
 const About = () => {
@@ -135,117 +135,55 @@ const About = () => {
           </div>
         </div>
 
-        {/* Team and Structure */}
+        {/* Team Section */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
-            Nuestro equipo y estructura
+            Nuestro Equipo
           </h3>
           
-          {/* Work Areas Structure */}
-          <div className="mb-16">
-            <h4 className="text-xl font-semibold text-primary text-center mb-8">
-              Cómo nos organizamos
-            </h4>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
-              {workAreas.map((area, index) => (
-                <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-0 overflow-hidden">
-                  <div className={`h-2 ${area.color}`}></div>
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-6">
-                       <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors">
-                         <area.icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <h5 className="text-xl font-bold text-primary">{area.title}</h5>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Team composition */}
-          <div>
-            <h4 className="text-xl font-semibold text-primary text-center mb-8">
-              Quiénes somos
-            </h4>
+          <p className="text-lg text-muted-foreground text-center mb-12 max-w-4xl mx-auto leading-relaxed">
+            En alda2u creemos que el valor no está en cargos ni jerarquías, sino en la diversidad de capacidades que ponemos en juego. Somos un equipo interdisciplinario que piensa, diseña y acompaña procesos de transformación, combinando conocimiento del sector, tecnología y diseño estratégico.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="text-center hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="pt-8 pb-6">
+                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Network className="h-10 w-10 text-primary" />
+                </div>
+                <h4 className="font-semibold mb-4 text-primary text-lg">Expertos en el ámbito sociosanitario, social y sanitario</h4>
+                <div className="text-muted-foreground text-left space-y-3">
+                  <p>→ Conocen en profundidad los sistemas, las políticas y las realidades de los servicios de atención.</p>
+                  <p>→ Aportan experiencia aplicada y visión estratégica para diseñar propuestas realistas y con impacto.</p>
+                </div>
+              </CardContent>
+            </Card>
             
-            <div className="text-center mb-12">
-              <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-lg max-w-4xl mx-auto mb-8">
-                <p className="text-lg text-foreground leading-relaxed italic">
-                  "Ocho personas únicas que se complementan, cada una con su esencia y especialidad, trabajando como un ecosistema colaborativo."
-                </p>
-              </div>
-              
-              <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Representamos a nuestro equipo a través de símbolos que evocan cómo trabajamos, qué nos representa y cómo nos complementamos en cada proyecto.
-              </p>
-            </div>
-
-          {/* Symbolic Team Representation */}
-          <div className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 rounded-2xl p-12 mb-12">
-            {/* Central connecting element */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent/30">
-              <Users className="w-10 h-10 text-accent" />
-            </div>
+            <Card className="text-center hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="pt-8 pb-6">
+                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Monitor className="h-10 w-10 text-primary" />
+                </div>
+                <h4 className="font-semibold mb-4 text-primary text-lg">Especialistas en tecnología</h4>
+                <div className="text-muted-foreground text-left space-y-3">
+                  <p>→ Acompañan procesos de digitalización y desarrollo de soluciones tecnológicas con criterio.</p>
+                  <p>→ Garantizan que la tecnología sea siempre un medio al servicio de las personas.</p>
+                </div>
+              </CardContent>
+            </Card>
             
-            {/* Team members arranged in a circle */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative">
-              {teamMembers.map((member, index) => {
-                const positions = [
-                  "top-0 left-1/4", "top-0 right-1/4", "top-1/2 left-0", "top-1/2 right-0",
-                  "bottom-1/2 left-0", "bottom-1/2 right-0", "bottom-0 left-1/4", "bottom-0 right-1/4"
-                ];
-                
-                return (
-                  <div 
-                    key={index} 
-                    className="relative group"
-                  >
-                    <Card className="hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-border/50 backdrop-blur-sm bg-background/60">
-                      <CardContent className="p-6 text-center">
-                        <div className={`w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:scale-110`}>
-                          <member.icon className={`w-8 h-8 ${member.color}`} />
-                        </div>
-                        <h4 className="text-sm font-semibold text-primary mb-2">{member.role}</h4>
-                        <div className="w-8 h-0.5 bg-accent mx-auto opacity-50"></div>
-                      </CardContent>
-                    </Card>
-                    
-                    {/* Connecting lines */}
-                    <div className="absolute top-1/2 left-1/2 w-8 h-0.5 bg-gradient-to-r from-accent/30 to-transparent transform -translate-y-1/2 translate-x-full hidden md:block"></div>
-                  </div>
-                );
-              })}
-            </div>
-            
-            {/* Floating connection symbols */}
-            <div className="absolute top-4 right-4 w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center animate-pulse">
-              <Sparkles className="w-4 h-4 text-primary" />
-            </div>
-            <div className="absolute bottom-4 left-4 w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center animate-pulse delay-1000">
-              <Heart className="w-4 h-4 text-accent" />
-            </div>
-            <div className="absolute top-4 left-4 w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center animate-pulse delay-2000">
-              <Lightbulb className="w-4 h-4 text-secondary" />
-            </div>
-          </div>
-
-          {/* Team stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-6">
-              <div className="text-3xl font-bold text-primary mb-2">8</div>
-              <div className="text-muted-foreground">Profesionales especializados</div>
-            </div>
-            <div className="p-6">
-              <div className="text-3xl font-bold text-accent mb-2">∞</div>
-              <div className="text-muted-foreground">Posibilidades de colaboración</div>
-            </div>
-            <div className="p-6">
-              <div className="text-3xl font-bold text-secondary mb-2">1</div>
-              <div className="text-muted-foreground">Visión compartida</div>
-            </div>
-            </div>
+            <Card className="text-center hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="pt-8 pb-6">
+                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Zap className="h-10 w-10 text-primary" />
+                </div>
+                <h4 className="font-semibold mb-4 text-primary text-lg">Diseñadores estratégicos de productos y servicios</h4>
+                <div className="text-muted-foreground text-left space-y-3">
+                  <p>→ Impulsan la innovación desde el diseño.</p>
+                  <p>→ Facilitan procesos de co-creación y crean experiencias más accesibles, empáticas y sostenibles.</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

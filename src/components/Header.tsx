@@ -26,33 +26,33 @@ const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <button 
+        <nav className="hidden md:flex items-center space-x-6">
+          <Button 
+            variant="ghost"
             onClick={() => scrollToSection('home')}
-            className="text-foreground hover:text-primary transition-colors"
           >
             Inicio
-          </button>
-          <button 
+          </Button>
+          <Button 
+            variant="ghost"
             onClick={() => scrollToSection('about')}
-            className="text-foreground hover:text-primary transition-colors"
           >
             Quiénes somos
-          </button>
-          <button 
+          </Button>
+          <Button 
+            variant="ghost"
             onClick={() => scrollToSection('services')}
-            className="text-foreground hover:text-primary transition-colors"
           >
             Qué hacemos
-          </button>
-          <button 
+          </Button>
+          <Button 
+            variant="ghost"
             onClick={() => scrollToSection('projects')}
-            className="text-foreground hover:text-primary transition-colors"
           >
             Proyectos
-          </button>
+          </Button>
           <Button 
-            variant="transform" 
+            variant="default"
             onClick={() => scrollToSection('contact')}
           >
             Contacto
@@ -71,33 +71,37 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <nav className="md:hidden bg-background border-b border-muted animate-fade-in">
-          <div className="container mx-auto px-4 py-4 space-y-4">
-            <button 
+          <div className="container mx-auto px-4 py-4 space-y-3">
+            <Button 
+              variant="ghost"
+              className="w-full justify-start"
               onClick={() => scrollToSection('home')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors"
             >
               Inicio
-            </button>
-            <button 
+            </Button>
+            <Button 
+              variant="ghost"
+              className="w-full justify-start"
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors"
             >
               Quiénes somos
-            </button>
-            <button 
+            </Button>
+            <Button 
+              variant="ghost"
+              className="w-full justify-start"
               onClick={() => scrollToSection('services')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors"
             >
               Qué hacemos
-            </button>
-            <button 
+            </Button>
+            <Button 
+              variant="ghost"
+              className="w-full justify-start"
               onClick={() => scrollToSection('projects')}
-              className="block w-full text-left text-foreground hover:text-primary transition-colors"
             >
               Proyectos
-            </button>
+            </Button>
             <Button 
-              variant="transform" 
+              variant="default"
               className="w-full"
               onClick={() => scrollToSection('contact')}
             >

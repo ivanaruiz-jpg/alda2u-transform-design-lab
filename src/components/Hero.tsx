@@ -44,7 +44,7 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-lg md:text-xl font-medium">
               <span className="text-primary border-b-2 border-primary/30">Transformamos</span>
               <span className="text-muted-foreground">+</span>
-              <span className="text-accent border-b-2 border-accent/30">Para ti</span>
+              <span className="text-primary border-b-2 border-primary/30">Para ti</span>
             </div>
           </div>
           
@@ -61,7 +61,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+          <div className="flex justify-center items-center pt-8">
             <Button 
               variant="transform" 
               size="lg"
@@ -69,14 +69,6 @@ const Hero = () => {
               className="px-8"
             >
               Descubre cómo transformamos
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={() => scrollToSection('about')}
-              className="px-8 bg-accent/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-            >
-              Quiénes somos
             </Button>
           </div>
         </div>

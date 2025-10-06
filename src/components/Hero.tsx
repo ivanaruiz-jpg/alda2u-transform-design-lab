@@ -61,7 +61,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="flex justify-center items-center pt-8">
+          <div className="flex justify-center items-center pt-8 pb-20">
             <Button 
               variant="transform" 
               size="lg"

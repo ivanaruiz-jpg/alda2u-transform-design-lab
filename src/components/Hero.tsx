@@ -65,7 +65,7 @@ const Hero = () => {
             <Button 
               variant="transform" 
               size="lg"
-              onClick={() => scrollToSection('approach')}
+              onClick={() => scrollToSection('services')}
               className="px-8"
             >
               Descubre cómo transformamos
@@ -76,7 +76,7 @@ const Hero = () => {
               onClick={() => scrollToSection('about')}
               className="px-8 bg-accent/10 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              Trabajamos para ti
+              Quiénes somos
             </Button>
           </div>
         </div>

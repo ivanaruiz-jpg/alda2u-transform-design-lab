@@ -39,7 +39,7 @@ const Projects = () => {
     },
     {
       icon: Phone,
-      name: "Proyecto de Teleasistencia – Gobierno de Cantabria",
+      name: "Proyecto de Teleasistencia",
       sector: "Sector público",
       intervention: "Rediseño de servicio público",
       whatWeDid: "Lideramos la modernización integral del servicio de teleasistencia regional, aplicando un enfoque centrado en el usuario y optimizando procesos operativos.",

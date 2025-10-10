@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home, Calendar } from "lucide-react";
+import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home, Calendar, Monitor } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -68,6 +68,14 @@ const Projects = () => {
       intervention: "Organización y producción de eventos",
       whatWeDid: "Apoyamos en la estructuración del evento, creación del material necesario (guiones, material de promoción, gestión de comunicaciones, etc.).",
       ourContribution: "Gestión integral que facilita encuentros significativos del sector"
+    },
+    {
+      icon: Monitor,
+      name: "Diseño de productos digitales sociosanitarios",
+      sector: "Sector público",
+      intervention: "Diseño y supervisión de desarrollo",
+      whatWeDid: "Somos responsables de identificar necesidades de la comunidad y/o cliente, y supervisamos el diseño y desarrollo de productos como el portal sociosanitario y su área comunitaria para asegurar una adecuada experiencia de usuario.",
+      ourContribution: "Productos digitales centrados en el usuario que conectan servicios y comunidad"
     }
   ];
 

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building2, Users, Cog, Target, Stethoscope, Lightbulb, Globe, Settings, Heart, Eye, Zap } from "lucide-react";
+import { Building2, Users, Cog, Target, Stethoscope, Lightbulb, Globe, Settings, Heart, Eye, Zap, Cpu } from "lucide-react";
 import servicesImage from "@/assets/services-design.jpg";
 
 const Services = () => {
@@ -51,6 +51,11 @@ const Services = () => {
       icon: Building2,
       title: "Interoperabilidad sociosanitaria",
       description: "Soluciones para la integración, coordinación y comunicación entre sistemas y organizaciones."
+    },
+    {
+      icon: Cpu,
+      title: "Asesoramiento tecnológico",
+      description: "Asesoramos y apoyamos en el uso de tecnología según las necesidades del cliente y/o proyecto."
     }
   ];
 

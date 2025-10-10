@@ -31,7 +31,7 @@ const Hero = () => {
         <div className="absolute bottom-40 left-40 w-48 h-48 bg-olive rounded-full mix-blend-multiply"></div>
       </div>
       
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-10 pt-24">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           <div className="text-center">
             <div className="flex items-center justify-center mb-6">

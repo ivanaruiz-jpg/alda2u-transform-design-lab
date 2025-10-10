@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home } from "lucide-react";
+import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home, Calendar } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -60,6 +60,14 @@ const Projects = () => {
       intervention: "Integración tecnológica",
       whatWeDid: "Diseño de la incorporación de tecnología para el bienestar en espacios convivenciales.",
       ourContribution: "Tecnología humanizada que potencia la vida comunitaria"
+    },
+    {
+      icon: Calendar,
+      name: "Organización de eventos sociosanitarios",
+      sector: "Sector público",
+      intervention: "Organización y producción de eventos",
+      whatWeDid: "Apoyamos en la estructuración del evento, creación del material necesario (guiones, material de promoción, gestión de comunicaciones, etc.).",
+      ourContribution: "Gestión integral que facilita encuentros significativos del sector"
     }
   ];
 

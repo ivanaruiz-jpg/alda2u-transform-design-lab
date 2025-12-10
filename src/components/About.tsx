@@ -39,7 +39,7 @@ const About = () => {
   const milestones = [
     { year: "2013", event: "Fundación de ALDA2U" },
     { year: "2019", event: "Comienza nuestro camino en consultoría estratégica y diseño de servicios especializados en el sector salud, social y sociosanitario" },
-    { year: "2020", event: "Desarrollamos una metodología propia de diseño de servicios especializada en el sector sociosanitario" },
+    { year: "2020", event: "Desarrollamos una metodología propia de diseño de servicios para el sector sociosanitario" },
     { year: "2021", event: "Empezamos el diseño y acompañamiento de estrategias del sector público en el ámbito de sistemas de atención social y sociosanitaria" },
     { year: "2022", event: "Somos una empresa 100% online" },
     { year: "2024", event: "Acuerdos de colaboración con terceros" },

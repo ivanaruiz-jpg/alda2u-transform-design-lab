@@ -88,8 +88,8 @@ const About = () => {
         </div>
 
         {/* Timeline */}
-        <div className="mb-20">
-          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-12">
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl font-semibold text-primary text-center mb-8">
             Nuestro recorrido
           </h3>
           <div className="max-w-4xl mx-auto">
@@ -98,17 +98,17 @@ const About = () => {
               <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-accent"></div>
               
               {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center mb-8 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                <div key={index} className={`flex items-center mb-4 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
                     <Card className="shadow-soft hover:shadow-medium transition-shadow duration-300">
-                      <CardContent className="p-6">
-                        <div className="text-accent font-bold text-lg mb-2">{milestone.year}</div>
-                        <p className="text-foreground">{milestone.event}</p>
+                      <CardContent className="p-4">
+                        <div className="text-accent font-bold text-base mb-1">{milestone.year}</div>
+                        <p className="text-foreground text-sm">{milestone.event}</p>
                       </CardContent>
                     </Card>
                   </div>
                   {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-soft"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-accent rounded-full border-3 border-background shadow-soft"></div>
                 </div>
               ))}
             </div>

@@ -45,10 +45,23 @@ const Footer = () => {
           </div>
         </div>
 
-          <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-            <p className="text-primary-foreground/60">
-              © {new Date().getFullYear()} ALDA2U • Transformamos para ti • Todos los derechos reservados.
-            </p>
+          <div className="border-t border-primary-foreground/20 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-primary-foreground/60">
+                © {new Date().getFullYear()} ALDA2U • Transformamos para ti • Todos los derechos reservados.
+              </p>
+              <div className="flex gap-6 text-sm">
+                <a href="/aviso-legal" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  Aviso legal
+                </a>
+                <a href="/politica-privacidad" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  Política de privacidad
+                </a>
+                <a href="/politica-cookies" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                  Política de cookies
+                </a>
+              </div>
+            </div>
           </div>
       </div>
     </footer>

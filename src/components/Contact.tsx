@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -133,16 +133,6 @@ const Contact = () => {
                     <div>
                       <p className="font-semibold text-primary">Email</p>
                       <p className="text-muted-foreground">info@alda2u.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-4">
-                     <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
-                        <Phone className="w-6 h-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-primary">Teléfono</p>
-                      <p className="text-muted-foreground">+34 XXX XXX XXX</p>
                     </div>
                   </div>
 

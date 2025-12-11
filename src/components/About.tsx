@@ -42,7 +42,7 @@ const About = () => {
     { year: "2020", event: "Desarrollamos una metodología propia de diseño de servicios para el sector sociosanitario" },
     { year: "2021", event: "Empezamos el diseño y acompañamiento de estrategias del sector público en el ámbito de sistemas de atención social y sociosanitaria" },
     { year: "2022", event: "Somos una empresa 100% online" },
-    { year: "2024", event: "Acuerdos de colaboración con terceros" },
+    { year: "2024", event: "Comenzamos también a trabajar en acuerdos de colaboración con terceros" },
     { year: "2025", event: "Nos especializamos en interoperabilidad sociosanitaria" }
   ];
 

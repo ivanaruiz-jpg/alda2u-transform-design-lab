@@ -43,7 +43,7 @@ const About = () => {
     { year: "2021", event: "Empezamos el diseño y acompañamiento de estrategias del sector público en el ámbito de sistemas de atención social y sociosanitaria" },
     { year: "2022", event: "Somos una empresa 100% online" },
     { year: "2024", event: "Acuerdos de colaboración con terceros" },
-    { year: "2025", event: "Somos un referente en interoperabilidad organizativa sociosanitaria" }
+    { year: "2025", event: "Nos especializamos en interoperabilidad sociosanitaria" }
   ];
 
   const workAreas = [

@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 const EMAILJS_SERVICE_ID = "service_y39a8b8";
 const EMAILJS_TEMPLATE_ID = "template_96q8i8o";
 const EMAILJS_PUBLIC_KEY = "lnko6JvFsggW4H93C";
+const RECAPTCHA_SITE_KEY = "6LcdWC0sAAAAALXvQGfMYZSnVgUsake5c2J23-kE";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +22,8 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -51,6 +55,8 @@ const Contact = () => {
         description: "Gracias por contactarnos. Te responderemos pronto.",
       });
       setFormData({ name: "", email: "", organization: "", message: "" });
+      setCaptchaVerified(false);
+      recaptchaRef.current?.reset();
     } catch (error) {
       console.error("Error sending email:", error);
       toast({
@@ -141,7 +147,16 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="gradient" className="w-full" size="lg" disabled={isSubmitting}>
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(value) => setCaptchaVerified(!!value)}
+                      onExpired={() => setCaptchaVerified(false)}
+                    />
+                  </div>
+
+                  <Button type="submit" variant="gradient" className="w-full" size="lg" disabled={isSubmitting || !captchaVerified}>
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-4 h-4 mr-2 animate-spin" />

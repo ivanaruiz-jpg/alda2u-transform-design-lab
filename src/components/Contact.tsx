@@ -1,11 +1,16 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+
+const EMAILJS_SERVICE_ID = "service_y39a8b8";
+const EMAILJS_TEMPLATE_ID = "template_96q8i8o";
+const EMAILJS_PUBLIC_KEY = "lnko6JvFsggW4H93C";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +19,7 @@ const Contact = () => {
     organization: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -23,14 +29,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarnos. Te responderemos pronto.",
-    });
-    setFormData({ name: "", email: "", organization: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          organization: formData.organization,
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Mensaje enviado",
+        description: "Gracias por contactarnos. Te responderemos pronto.",
+      });
+      setFormData({ name: "", email: "", organization: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error al enviar",
+        description: "No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -111,9 +141,18 @@ const Contact = () => {
                     />
                   </div>
 
-                  <Button type="submit" variant="gradient" className="w-full" size="lg">
-                    <Send className="w-4 h-4 mr-2" />
-                    Enviar mensaje
+                  <Button type="submit" variant="gradient" className="w-full" size="lg" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Enviar mensaje
+                      </>
+                    )}
                   </Button>
                 </form>
               </CardContent>

@@ -147,7 +147,7 @@ const Projects = () => {
           </Carousel>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

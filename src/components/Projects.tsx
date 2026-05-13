@@ -80,13 +80,13 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted/10">
+    <div className="pb-20 bg-muted/20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">
+          <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8">
             Proyectos
-          </h2>
+          </h3>
           <p className="text-lg md:text-xl text-foreground leading-relaxed">
             Cada proyecto es una muestra de lo que somos capaces de imaginar, facilitar, diseñar y acompañar. 
             Estas experiencias reflejan nuestro enfoque y metodología en acción.

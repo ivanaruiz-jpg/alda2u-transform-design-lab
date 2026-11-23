@@ -1,9 +1,11 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-abstract.jpg";
 import logoVertical from "@/assets/alda2u-logo-vertical.png";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -17,7 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="ALDA2U - Diseño abstracto representando transformación y conexión humana" 
+          alt=t("ALDA2U - Diseño abstracto representando transformación y conexión humana", "ALDA2U - Eraldaketa eta giza lotura irudikatzen dituen diseinu abstraktua") 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70"></div>
@@ -42,22 +44,18 @@ const Hero = () => {
               />
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-lg md:text-xl font-medium">
-              <span className="text-primary border-b-2 border-primary/30">Transformamos</span>
+              <span className="text-primary border-b-2 border-primary/30">{t("Transformamos", "Eraldatzen dugu")}</span>
               <span className="text-muted-foreground">+</span>
-              <span className="text-primary border-b-2 border-primary/30">Para ti</span>
+              <span className="text-primary border-b-2 border-primary/30">{t("Para ti", "Zuretzat")}</span>
             </div>
           </div>
           
           <div className="space-y-6">
-            <p className="text-xl md:text-2xl text-foreground leading-relaxed">
-              Agencia de asesoramiento estratégico y diseño de servicios especializada en los sectores 
-              <span className="text-primary font-semibold"> sanitario, social y sociosanitario</span>
+            <p className="text-xl md:text-2xl text-foreground leading-relaxed">{t("Agencia de asesoramiento estratégico y diseño de servicios especializada en los sectores", "Aholkularitza estrategikoko eta zerbitzu-diseinuko agentzia, sektore hauetan espezializatua:")}{" "}<span className="text-primary font-semibold">{t("sanitario, social y sociosanitario", "osasuna, gizarte-arloa eta arlo soziosanitarioa")}</span>
             </p>
             
             <div className="bg-gradient-to-r from-accent/10 to-warm/10 border-l-4 border-accent p-6 rounded-lg max-w-3xl mx-auto">
-              <p className="text-2xl md:text-3xl font-semibold text-primary italic">
-                "Diseñamos el cambio contigo, desde la estrategia y la empatía."
-              </p>
+              <p className="text-2xl md:text-3xl font-semibold text-primary italic">{t("\"Diseñamos el cambio contigo, desde la estrategia y la empatía.\"", "\"Aldaketa zurekin diseinatzen dugu, estrategiatik eta enpatiatik.\"")}</p>
             </div>
           </div>
           
@@ -67,9 +65,7 @@ const Hero = () => {
               size="lg"
               onClick={() => scrollToSection('services')}
               className="px-8"
-            >
-              Descubre cómo transformamos
-            </Button>
+            >{t("Descubre cómo transformamos", "Ezagutu nola eraldatzen dugun")}</Button>
           </div>
         </div>
         

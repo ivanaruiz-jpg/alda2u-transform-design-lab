@@ -1,81 +1,83 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Stethoscope, Heart, Users, Phone, Building, Palette, Cog, Lightbulb, Target, Zap, Home, Calendar, Monitor } from "lucide-react";
 
 const Projects = () => {
+  const { t } = useLanguage();
   const projects = [
     {
       icon: Stethoscope,
       name: "Nerea Care",
-      sector: "Empresas de cuidados - Atención domiciliaria",
-      intervention: "Diseño de servicio digital",
-      whatWeDid: "Diseñamos una plataforma integral que digitaliza y optimiza procesos asistenciales, centrándose en la experiencia tanto de profesionales como de pacientes.",
-      ourContribution: "Transformación digital que humaniza la tecnología en el cuidado"
+      sector: t("Empresas de cuidados - Atención domiciliaria", "Zaintza-enpresak - Etxeko arreta"),
+      intervention: t("Diseño de servicio digital", "Zerbitzu digitalaren diseinua"),
+      whatWeDid: t("Diseñamos una plataforma integral que digitaliza y optimiza procesos asistenciales, centrándose en la experiencia tanto de profesionales como de pacientes.", "Asistentzia-prozesuak digitalizatu eta optimizatzen dituen plataforma integrala diseinatu genuen, profesionalen zein pazienteen esperientzian oinarrituta."),
+      ourContribution: t("Transformación digital que humaniza la tecnología en el cuidado", "Zaintzan teknologia gizatiartzen duen eraldaketa digitala")
     },
     {
       icon: Heart,
       name: "CARE2U",
-      sector: "Empresas de cuidados - Atención domiciliaria",
-      intervention: "Acompañamiento estratégico de interoperabilidad",
-      whatWeDid: "Facilitamos la creación de un ecosistema de interoperabilidad entre servicios sociales y sanitarios, mejorando la coordinación y continuidad asistencial.",
-      ourContribution: "Puente tecnológico que conecta cuidados fragmentados"
+      sector: t("Empresas de cuidados - Atención domiciliaria", "Zaintza-enpresak - Etxeko arreta"),
+      intervention: t("Acompañamiento estratégico de interoperabilidad", "Elkarreragingarritasunaren laguntza estrategikoa"),
+      whatWeDid: t("Facilitamos la creación de un ecosistema de interoperabilidad entre servicios sociales y sanitarios, mejorando la coordinación y continuidad asistencial.", "Gizarte- eta osasun-zerbitzuen arteko elkarreragingarritasun-ekosistema sortzen lagundu genuen, koordinazioa eta asistentziaren jarraitutasuna hobetuz."),
+      ourContribution: t("Puente tecnológico que conecta cuidados fragmentados", "Zaintza zatikatuak lotzen dituen zubi teknologikoa")
     },
     {
       icon: Users,
       name: "Elkar Bizitu",
-      sector: "Participación ciudadana",
-      intervention: "Metodología participativa",
-      whatWeDid: "Desarrollamos una metodología que pone a las personas en situación vulnerable en el centro del diseño de servicios sociales, potenciando su participación activa.",
-      ourContribution: "Empoderamiento real de personas usuarias como co-creadoras"
+      sector: t("Participación ciudadana", "Herritarren parte-hartzea"),
+      intervention: t("Metodología participativa", "Metodologia parte-hartzailea"),
+      whatWeDid: t("Desarrollamos una metodología que pone a las personas en situación vulnerable en el centro del diseño de servicios sociales, potenciando su participación activa.", "Egoera ahulean dauden pertsonak gizarte-zerbitzuen diseinuaren erdigunean jartzen dituen metodologia garatu genuen, haien parte-hartze aktiboa sustatuz."),
+      ourContribution: t("Empoderamiento real de personas usuarias como co-creadoras", "Erabiltzaileen benetako ahalduntzea, elkarsortzaile gisa")
     },
     {
       icon: Building,
       name: "Helduak Zabaltzen",
-      sector: "Centros de mayores - Entorno comunitario",
-      intervention: "Innovación social comunitaria",
-      whatWeDid: "Creamos una red de apoyo comunitario que integra herramientas digitales adaptadas para promover el envejecimiento activo en entornos rurales.",
-      ourContribution: "Fortalecimiento de vínculos que trasciende lo digital"
+      sector: t("Centros de mayores - Entorno comunitario", "Adinekoen zentroak - Komunitate-ingurunea"),
+      intervention: t("Innovación social comunitaria", "Komunitateko berrikuntza soziala"),
+      whatWeDid: t("Creamos una red de apoyo comunitario que integra herramientas digitales adaptadas para promover el envejecimiento activo en entornos rurales.", "Landa-inguruneetan zahartze aktiboa sustatzeko tresna digital egokituak barne hartzen dituen komunitate-laguntzako sarea sortu genuen."),
+      ourContribution: t("Fortalecimiento de vínculos que trasciende lo digital", "Digitala gainditzen duen loturen indartzea")
     },
     {
       icon: Phone,
-      name: "Proyecto de Teleasistencia",
-      sector: "Sector público",
-      intervention: "Rediseño de servicio público",
-      whatWeDid: "Lideramos la modernización integral del servicio de teleasistencia regional, aplicando un enfoque centrado en el usuario y optimizando procesos operativos.",
-      ourContribution: "Servicio público más humano y eficiente"
+      name: t("Proyecto de Teleasistencia", "Teleasistentzia proiektua"),
+      sector: t("Sector público", "Sektore publikoa"),
+      intervention: t("Rediseño de servicio público", "Zerbitzu publikoaren birdiseinua"),
+      whatWeDid: t("Lideramos la modernización integral del servicio de teleasistencia regional, aplicando un enfoque centrado en el usuario y optimizando procesos operativos.", "Eskualdeko teleasistentzia-zerbitzuaren modernizazio integrala gidatu genuen, erabiltzailean oinarritutako ikuspegia aplikatuz eta prozesu operatiboak optimizatuz."),
+      ourContribution: t("Servicio público más humano y eficiente", "Zerbitzu publiko gizatiarragoa eta eraginkorragoa")
     },
     {
       icon: Zap,
-      name: "Oficina Técnica para la Interoperabilidad Sociosanitaria",
-      sector: "Sector público",
-      intervention: "Coordinación técnica estratégica",
-      whatWeDid: "Acompañamos el desarrollo y consolidación de la interoperabilidad sociosanitaria, coordinando informes de ética, apoyando estrategias regionales, diseñando portales y gestores de casos, y organizando encuentros del sector.",
-      ourContribution: "Metodología y coordinación que fortalece el ecosistema sociosanitario"
+      name: t("Oficina Técnica para la Interoperabilidad Sociosanitaria", "Elkarreragingarritasun Soziosanitariorako Bulego Teknikoa"),
+      sector: t("Sector público", "Sektore publikoa"),
+      intervention: t("Coordinación técnica estratégica", "Koordinazio tekniko estrategikoa"),
+      whatWeDid: t("Acompañamos el desarrollo y consolidación de la interoperabilidad sociosanitaria, coordinando informes de ética, apoyando estrategias regionales, diseñando portales y gestores de casos, y organizando encuentros del sector.", "Elkarreragingarritasun soziosanitarioaren garapena eta finkapena laguntzen ditugu: etika-txostenak koordinatuz, eskualdeko estrategiak babestuz, atariak eta kasu-kudeatzaileak diseinatuz eta sektoreko topaketak antolatuz."),
+      ourContribution: t("Metodología y coordinación que fortalece el ecosistema sociosanitario", "Ekosistema soziosanitarioa indartzen duen metodologia eta koordinazioa")
     },
     {
       icon: Home,
-      name: "Proyecto de Cohousing",
-      sector: "Vivienda colaborativa",
-      intervention: "Integración tecnológica",
-      whatWeDid: "Diseño de la incorporación de tecnología para el bienestar en espacios convivenciales.",
-      ourContribution: "Tecnología humanizada que potencia la vida comunitaria"
+      name: t("Proyecto de Cohousing", "Cohousing proiektua"),
+      sector: t("Vivienda colaborativa", "Etxebizitza kolaboratiboa"),
+      intervention: t("Integración tecnológica", "Integrazio teknologikoa"),
+      whatWeDid: t("Diseño de la incorporación de tecnología para el bienestar en espacios convivenciales.", "Ongizaterako teknologia bizikidetza-espazioetan txertatzeko diseinua."),
+      ourContribution: t("Tecnología humanizada que potencia la vida comunitaria", "Komunitate-bizitza sustatzen duen teknologia gizatiarra")
     },
     {
       icon: Calendar,
-      name: "Organización de eventos sociosanitarios",
-      sector: "Sector público",
-      intervention: "Organización y producción de eventos",
-      whatWeDid: "Apoyamos en la estructuración del evento, creación del material necesario (guiones, material de promoción, gestión de comunicaciones, etc.).",
-      ourContribution: "Gestión integral que facilita encuentros significativos del sector"
+      name: t("Organización de eventos sociosanitarios", "Ekitaldi soziosanitarioen antolaketa"),
+      sector: t("Sector público", "Sektore publikoa"),
+      intervention: t("Organización y producción de eventos", "Ekitaldien antolaketa eta ekoizpena"),
+      whatWeDid: t("Apoyamos en la estructuración del evento, creación del material necesario (guiones, material de promoción, gestión de comunicaciones, etc.).", "Ekitaldiaren egituraketan eta beharrezko materialaren sorreran laguntzen dugu (gidoiak, sustapen-materiala, komunikazioen kudeaketa, etab.)."),
+      ourContribution: t("Gestión integral que facilita encuentros significativos del sector", "Sektoreko topaketa esanguratsuak errazten dituen kudeaketa integrala")
     },
     {
       icon: Monitor,
-      name: "Diseño de productos digitales sociosanitarios",
-      sector: "Sector público",
-      intervention: "Diseño y supervisión de desarrollo",
-      whatWeDid: "Somos responsables de identificar necesidades de la comunidad y/o cliente, y supervisamos el diseño y desarrollo de productos como el portal sociosanitario y su área comunitaria para asegurar una adecuada experiencia de usuario.",
-      ourContribution: "Productos digitales centrados en el usuario que conectan servicios y comunidad"
+      name: t("Diseño de productos digitales sociosanitarios", "Produktu digital soziosanitarioen diseinua"),
+      sector: t("Sector público", "Sektore publikoa"),
+      intervention: t("Diseño y supervisión de desarrollo", "Diseinua eta garapenaren gainbegiratzea"),
+      whatWeDid: t("Somos responsables de identificar necesidades de la comunidad y/o cliente, y supervisamos el diseño y desarrollo de productos como el portal sociosanitario y su área comunitaria para asegurar una adecuada experiencia de usuario.", "Komunitatearen eta/edo bezeroaren beharrak identifikatzeaz arduratzen gara, eta atari soziosanitarioa eta haren komunitate-eremua bezalako produktuen diseinua eta garapena gainbegiratzen ditugu, erabiltzaile-esperientzia egokia bermatzeko."),
+      ourContribution: t("Productos digitales centrados en el usuario que conectan servicios y comunidad", "Zerbitzuak eta komunitatea lotzen dituzten erabiltzailean oinarritutako produktu digitalak")
     }
   ];
 
@@ -84,13 +86,8 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8">
-            Proyectos
-          </h3>
-          <p className="text-lg md:text-xl text-foreground leading-relaxed">
-            Cada proyecto es una muestra de lo que somos capaces de imaginar, facilitar, diseñar y acompañar. 
-            Estas experiencias reflejan nuestro enfoque y metodología en acción.
-          </p>
+          <h3 className="text-3xl md:text-4xl font-bold text-primary mb-8">{t("Proyectos", "Proiektuak")}</h3>
+          <p className="text-lg md:text-xl text-foreground leading-relaxed">{t("Cada proyecto es una muestra de lo que somos capaces de imaginar, facilitar, diseñar y acompañar. Estas experiencias reflejan nuestro enfoque y metodología en acción.", "Proiektu bakoitza irudikatu, erraztu, diseinatu eta lagun dezakegunaren adibide bat da. Esperientzia hauek gure ikuspegia eta metodologia ekintzan islatzen dituzte.")}</p>
         </div>
 
         {/* Projects carousel */}
@@ -127,13 +124,13 @@ const Projects = () => {
 
                     <CardContent className="space-y-4">
                       <div>
-                        <h4 className="font-semibold text-primary mb-2 text-sm">Qué hicimos</h4>
+                        <h4 className="font-semibold text-primary mb-2 text-sm">{t("Qué hicimos", "Zer egin genuen")}</h4>
                         <p className="text-muted-foreground leading-relaxed text-sm">{project.whatWeDid}</p>
                       </div>
 
                       {project.ourContribution && (
                         <div className="bg-accent/5 border-l-3 border-accent p-3 rounded-r-lg">
-                          <h4 className="font-semibold text-accent mb-1 text-xs">Nuestra aportación</h4>
+                          <h4 className="font-semibold text-accent mb-1 text-xs">{t("Nuestra aportación", "Gure ekarpena")}</h4>
                           <p className="text-foreground leading-relaxed text-sm italic">{project.ourContribution}</p>
                         </div>
                       )}

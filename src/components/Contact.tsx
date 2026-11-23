@@ -1,3 +1,4 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -15,6 +16,7 @@ const EMAILJS_PUBLIC_KEY = "lnko6JvFsggW4H93C";
 const RECAPTCHA_SITE_KEY = "6LcdWC0sAAAAALXvQGfMYZSnVgUsake5c2J23-kE";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,8 +53,8 @@ const Contact = () => {
       );
 
       toast({
-        title: "Mensaje enviado",
-        description: "Gracias por contactarnos. Te responderemos pronto.",
+        title: t("Mensaje enviado", "Mezua bidali da"),
+        description: t("Gracias por contactarnos. Te responderemos pronto.", "Eskerrik asko gurekin harremanetan jartzeagatik. Laster erantzungo dizugu."),
       });
       setFormData({ name: "", email: "", organization: "", message: "" });
       setCaptchaVerified(false);
@@ -60,8 +62,8 @@ const Contact = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       toast({
-        title: "Error al enviar",
-        description: "No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.",
+        title: t("Error al enviar", "Errorea bidaltzean"),
+        description: t("No se pudo enviar el mensaje. Por favor, inténtalo de nuevo.", "Ezin izan da mezua bidali. Mesedez, saiatu berriro."),
         variant: "destructive",
       });
     } finally {
@@ -74,17 +76,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">
-            Contacto
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">{t("Contacto", "Kontaktua")}</h2>
           <div className="bg-primary/5 border border-primary/20 rounded-lg p-8">
-            <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">
-              ¿Qué podemos imaginar juntos?
-            </h3>
-            <p className="text-lg text-foreground leading-relaxed">
-              Cada desafío es único y requiere una aproximación específica. Exploremos las posibilidades 
-              que se abren cuando combinamos tu experiencia con nuestra metodología.
-            </p>
+            <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-4">{t("¿Qué podemos imaginar juntos?", "Zer irudika dezakegu elkarrekin?")}</h3>
+            <p className="text-lg text-foreground leading-relaxed">{t("Cada desafío es único y requiere una aproximación específica. Exploremos las posibilidades que se abren cuando combinamos tu experiencia con nuestra metodología.", "Erronka bakoitza bakarra da eta hurbilketa berezia eskatzen du. Azter ditzagun zure esperientzia eta gure metodologia uztartzean zabaltzen diren aukerak.")}</p>
           </div>
         </div>
 
@@ -93,20 +88,20 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="shadow-medium">
               <CardHeader>
-                <CardTitle className="text-2xl text-primary">Envíanos un mensaje</CardTitle>
+                <CardTitle className="text-2xl text-primary">{t("Envíanos un mensaje", "Bidali iezaguzu mezu bat")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Nombre *</Label>
+                      <Label htmlFor="name">{t("Nombre *", "Izena *")}</Label>
                       <Input
                         id="name"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="Tu nombre"
+                        placeholder=t("Tu nombre", "Zure izena")
                       />
                     </div>
                     <div className="space-y-2">
@@ -124,18 +119,18 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="organization">Organización</Label>
+                    <Label htmlFor="organization">{t("Organización", "Erakundea")}</Label>
                     <Input
                       id="organization"
                       name="organization"
                       value={formData.organization}
                       onChange={handleChange}
-                      placeholder="Nombre de tu organización"
+                      placeholder=t("Nombre de tu organización", "Zure erakundearen izena")
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Mensaje *</Label>
+                    <Label htmlFor="message">{t("Mensaje *", "Mezua *")}</Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -143,7 +138,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={6}
-                      placeholder="Cuéntanos sobre tu desafío o proyecto..."
+                      placeholder=t("Cuéntanos sobre tu desafío o proyecto...", "Kontaiguzu zure erronkari edo proiektuari buruz...")
                     />
                   </div>
 
@@ -159,14 +154,10 @@ const Contact = () => {
                   <Button type="submit" variant="gradient" className="w-full" size="lg" disabled={isSubmitting || !captchaVerified}>
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Enviando...
-                      </>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />{t("Enviando...", "Bidaltzen...")}</>
                     ) : (
                       <>
-                        <Send className="w-4 h-4 mr-2" />
-                        Enviar mensaje
-                      </>
+                        <Send className="w-4 h-4 mr-2" />{t("Enviar mensaje", "Bidali mezua")}</>
                     )}
                   </Button>
                 </form>
@@ -177,7 +168,7 @@ const Contact = () => {
             <div className="space-y-8">
               <Card className="shadow-medium">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-primary">Información de contacto</CardTitle>
+                  <CardTitle className="text-2xl text-primary">{t("Información de contacto", "Harremanetarako informazioa")}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
@@ -195,8 +186,8 @@ const Contact = () => {
                         <MapPin className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-primary">Ubicación</p>
-                      <p className="text-muted-foreground">País Vasco, España</p>
+                      <p className="font-semibold text-primary">{t("Ubicación", "Kokapena")}</p>
+                      <p className="text-muted-foreground">{t("País Vasco, España", "Euskal Herria, Espainia")}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -204,17 +195,12 @@ const Contact = () => {
 
               <Card className="shadow-medium bg-gradient-to-br from-accent/5 to-accent/10 border-accent/20">
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-primary mb-4">
-                    ¿Listo para transformar tu organización?
-                  </h3>
-                  <p className="text-foreground leading-relaxed mb-6">
-                    Cada conversación es el inicio de una posible transformación. 
-                    Nos adaptamos a tus tiempos y necesidades para encontrar la mejor forma de colaborar.
-                  </p>
+                  <h3 className="text-xl font-semibold text-primary mb-4">{t("¿Listo para transformar tu organización?", "Prest zure erakundea eraldatzeko?")}</h3>
+                  <p className="text-foreground leading-relaxed mb-6">{t("Cada conversación es el inicio de una posible transformación. Nos adaptamos a tus tiempos y necesidades para encontrar la mejor forma de colaborar.", "Elkarrizketa bakoitza eraldaketa posible baten hasiera da. Zure denboretara eta beharretara egokitzen gara elkarlanerako modurik onena aurkitzeko.")}</p>
                   <div className="space-y-2">
-                    <p className="text-sm text-muted-foreground">• Consulta inicial sin compromiso</p>
-                    <p className="text-sm text-muted-foreground">• Análisis personalizado de necesidades</p>
-                    <p className="text-sm text-muted-foreground">• Propuesta adaptada a tu contexto</p>
+                    <p className="text-sm text-muted-foreground">{t("• Consulta inicial sin compromiso", "• Hasierako kontsulta, konpromisorik gabe")}</p>
+                    <p className="text-sm text-muted-foreground">{t("• Análisis personalizado de necesidades", "• Beharren azterketa pertsonalizatua")}</p>
+                    <p className="text-sm text-muted-foreground">{t("• Propuesta adaptada a tu contexto", "• Zure testuingurura egokitutako proposamena")}</p>
                   </div>
                 </CardContent>
               </Card>

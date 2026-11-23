@@ -1,10 +1,13 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import logo from "@/assets/alda2u-logo-vertical.png";
 
 const Header = () => {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,36 +46,32 @@ const Header = () => {
           <button 
             onClick={() => scrollToSection('home')}
             className="text-foreground hover:text-primary transition-colors"
-          >
-            Inicio
-          </button>
+          >{t("Inicio", "Hasiera")}</button>
           <button 
             onClick={() => scrollToSection('about')}
             className="text-foreground hover:text-primary transition-colors"
-          >
-            Quiénes somos
-          </button>
+          >{t("Quiénes somos", "Nor gara")}</button>
           <button 
             onClick={() => scrollToSection('services')}
             className="text-foreground hover:text-primary transition-colors"
-          >
-            Qué hacemos
-          </button>
+          >{t("Qué hacemos", "Zer egiten dugu")}</button>
           <Button 
             variant="transform" 
             onClick={() => scrollToSection('contact')}
-          >
-            Contacto
-          </Button>
+          >{t("Contacto", "Kontaktua")}</Button>
+          <LanguageSwitcher />
         </nav>
 
         {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-3">
+        <LanguageSwitcher />
         <button
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X /> : <Menu />}
         </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -82,28 +81,20 @@ const Header = () => {
             <button 
               onClick={() => scrollToSection('home')}
               className="block w-full text-left text-foreground hover:text-primary transition-colors"
-            >
-              Inicio
-            </button>
+            >{t("Inicio", "Hasiera")}</button>
             <button 
               onClick={() => scrollToSection('about')}
               className="block w-full text-left text-foreground hover:text-primary transition-colors"
-            >
-              Quiénes somos
-            </button>
+            >{t("Quiénes somos", "Nor gara")}</button>
             <button 
               onClick={() => scrollToSection('services')}
               className="block w-full text-left text-foreground hover:text-primary transition-colors"
-            >
-              Qué hacemos
-            </button>
+            >{t("Qué hacemos", "Zer egiten dugu")}</button>
             <Button 
               variant="transform" 
               className="w-full"
               onClick={() => scrollToSection('contact')}
-            >
-              Contacto
-            </Button>
+            >{t("Contacto", "Kontaktua")}</Button>
           </div>
         </nav>
       )}
